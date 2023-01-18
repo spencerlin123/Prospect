@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+.hero-container {
+  background: url("./ProspectBackground.png") center center/cover no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+  margin-top: 0px;
+}
+
+.hero-container > h1 {
+  color: #000957;
+  font-size: 100px;
+  margin-top: 100px;
+  margin-left: 0px;
+  font-family: "Lato";
+  font-weight: 900;
+}
+
+.hero-container > p {
+  margin-top: 8px;
+  color: #000957;
+  font-size: 26px;
+  font-family: "Lato";
+  font-weight: 400;
+  font-weight: bold;
+}
+
+.hero-btns {
+  margin-top: 32px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.hero-btns .btn {
+  margin: 6px;
+}
+
+.fa-play-circle {
+  margin-left: 4px;
+}
+
+@media screen and (max-width: 960px) {
+  .hero-container > h1 {
+    font-size: 70px;
+    margin-top: -150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container > h1 {
+    font-size: 50px;
+    margin-top: -100px;
+  }
+
+  .hero-container > p {
+    font-size: 30px;
+  }
+
+  .btn-mobile {
+    display: block;
+    text-decoration: none;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+.hero-items {
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.hero-links-text1 {
+  color: white;
+  text-decoration: none;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 30px;
+  padding: 12px;
+  border: solid;
+  border-color: #000957;
+  border-width: 4px;
+  background-color: #000957;
+  margin: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.hero-links-text1:hover {
+  color: #000957;
+  text-decoration: none;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 30px;
+  padding: 12px;
+  border: solid;
+  border-color: #000957;
+  border-width: 4px;
+  background-color: white;
+  margin: 8px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.hero-links1 {
+  text-decoration: none;
+}
+
+.hero-links2 {
+  text-decoration: none;
+}
+
+.hero-links-text2 {
+  font-family: "Lato";
+  font-weight: 700;
+  color: #000957;
+  font-size: 30px;
+  border: solid;
+  border-color: #000957;
+  border-width: 4px;
+  padding: 12px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.hero-links-text2:hover {
+  font-family: "Lato";
+  font-weight: 700;
+  color: #fff;
+  font-size: 30px;
+  border: solid;
+  border-color: #000957;
+  border-width: 4px;
+  padding: 12px;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: #000957;
+}

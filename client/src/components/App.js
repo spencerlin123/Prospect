@@ -11,6 +11,9 @@ import { socket } from "../client-socket.js";
 
 import { get, post } from "../utilities";
 
+import Navbar from "./Navbar.js";
+import Home from "./pages/Home.js";
+
 /**
  * Define the "App" component
  */
@@ -43,8 +46,15 @@ const App = () => {
 
   return (
     <>
+      <Navbar />
       <Router>
-        <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+        <Skeleton
+          path="/login"
+          handleLogin={handleLogin}
+          handleLogout={handleLogout}
+          userId={userId}
+        />
+        <Home path="/" />
         <NotFound default />
       </Router>
     </>

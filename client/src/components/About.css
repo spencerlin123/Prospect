@@ -1,0 +1,13 @@
+.about-container {
+  background: "./blue-box.png";
+}
+
+.blue-box {
+  background: #000957;
+  max-width: 1300px;
+  height: 300px;
+  opacity: 0.75;
+  margin-top: 64px;
+  margin-left: 64px;
+  margin-right: 64px;
+}
