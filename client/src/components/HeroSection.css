@@ -143,3 +143,7 @@
   padding-right: 40px;
   background-color: #000957;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -15,9 +15,9 @@ function HeroSection() {
           <Link to="/entercode" className="hero-links1">
             <span className="hero-links-text1">HAVE A CODE?</span>
           </Link>
-          <Link to="/about" className="hero-links2">
+          <a href="#down" className="hero-links2">
             <span className="hero-links-text2">ABOUT</span>
-          </Link>
+          </a>
         </div>
       </div>
     </div>
