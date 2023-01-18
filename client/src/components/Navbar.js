@@ -33,7 +33,7 @@ function Navbar() {
               </Link>
             </div>
             <div className="navbar-item">
-              <Link to="/joinedgroups" className="nav-links">
+              <Link to="/joined-groups" className="nav-links">
                 <div className="navbar-item-text">JOINED GROUPS</div>
               </Link>
             </div>

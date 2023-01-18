@@ -13,6 +13,7 @@ import { get, post } from "../utilities";
 
 import Navbar from "./Navbar.js";
 import Home from "./pages/Home.js";
+import JoinedGroups from "./pages/JoinedGroups.js";
 
 /**
  * Define the "App" component
@@ -56,6 +57,7 @@ const App = () => {
         />
         <Home path="/" />
         <NotFound default />
+        <JoinedGroups path="joined-groups" />
       </Router>
     </>
   );
