@@ -245,3 +245,8 @@
   text-decoration: none;
   justify-content: space-around;
 }
+
+.skeleton-margin {
+  margin-right: 32px;
+  margin-left: 32px;
+}
