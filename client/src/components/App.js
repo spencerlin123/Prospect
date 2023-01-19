@@ -57,7 +57,7 @@ const App = () => {
         />
         <Home path="/" />
         <NotFound default />
-        <JoinedGroups path="joined-groups" />
+        <JoinedGroups path="/joined-groups" />
       </Router>
     </>
   );
