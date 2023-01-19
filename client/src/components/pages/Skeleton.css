@@ -1,1 +1,21 @@
-/* Fill me in :) */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.skeleton-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.margin {
+  display: flex;
+  margin-top: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

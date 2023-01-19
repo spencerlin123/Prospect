@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "@reach/router";
 import "./Navbar.css";
 import { Button } from "./Button";
+import Skeleton from "./pages/Skeleton";
 
 function Navbar() {
   const [click, setClick] = useState(false);
