@@ -2,21 +2,35 @@ import React from "react";
 import "./JoinedGroups.css";
 import { Link } from "@reach/router";
 import { Group } from "../modules/Group";
+import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
-function JoinedGroups() {
+function JoinedGroups(props) {
   return (
     <>
-      <div className="Whole Page">
-        <b className="Joined-Groups-header">JOINED GROUPS</b>
-        <Group img_url= "https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445" title="dog" description="dddd" prospects={8} />
-        <div className="line">
-          <div className="Join-Code-box">
-              <Link to="/entercode/" className="nav-links-code">
-                <div className="Join-Code-text">JOIN WITH A CODE</div>
-                <div className="Plus-sign">+</div>
-              </Link>
+      <div>
+        {props.userId ? (
+          <div className="Whole Page">
+            <b className="Joined-Groups-header">JOINED GROUPS</b>
+            <Group
+              img_url="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445"
+              title="dog"
+              description="dddd"
+              prospects={8}
+            />
+            <div className="line">
+              <div className="Join-Code-box">
+                <Link to="/entercode/" className="nav-links-code">
+                  <div className="Join-Code-text">JOIN WITH A CODE</div>
+                  <div className="Plus-sign">+</div>
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div>
+            <b className="must-login">Please log in</b>
+          </div>
+        )}
       </div>
     </>
   );

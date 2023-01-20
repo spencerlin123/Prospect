@@ -4,35 +4,33 @@
   position: relative;
 }
 .Joined-Groups-header {
-    display: flex;
-    height: 250px;
-    align-items: center;
-    justify-content: center;
-    color: #000957;
-    text-decoration: underline;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 1000;
-  
+  display: flex;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
 }
 
 .line {
-    height: 0;
-    width: 100%;
-    display: flex;
-    bottom: 75px;
-    border: 0.5px solid grey;
-    position: fixed;
-
+  height: 0;
+  width: 100%;
+  display: flex;
+  bottom: 75px;
+  border: 0.5px solid grey;
+  position: fixed;
 }
 .Join-Code-box {
-    display: flex;
-    padding: 10px;
-    margin: 15px;
-    position: fixed;
-    bottom:0;
-    right:0;
-    border: 3px solid #000957;
+  display: flex;
+  padding: 10px;
+  margin: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border: 3px solid #000957;
 }
 
 .Join-Code-box:hover {
@@ -41,19 +39,31 @@
   background: yellow;
 }
 
-.nav-links-code{
-    display: flex;
-    flex-direction: row;
-    text-decoration: None;
+.nav-links-code {
+  display: flex;
+  flex-direction: row;
+  text-decoration: None;
 }
 
 .Join-Code-text {
-    width: 170px;
-    font-family: "Lato";
-    font-weight: 1000;
+  width: 170px;
+  font-family: "Lato";
+  font-weight: 1000;
 }
 
 .Plus-sign {
-    font-family: "Lato";
-    font-weight: 1000;
+  font-family: "Lato";
+  font-weight: 1000;
+}
+
+.must-login {
+  display: flex;
+  height: 650px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
 }
