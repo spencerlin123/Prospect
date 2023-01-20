@@ -3,8 +3,11 @@ import { Link } from "@reach/router";
 import "./Navbar.css";
 import { Button } from "./Button";
 import Skeleton from "./pages/Skeleton";
+import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
-function Navbar() {
+const GOOGLE_CLIENT_ID = "712668659687-6iut9vat7u628ka1s6723mvd2ksjg2d7.apps.googleusercontent.com";
+
+function Navbar(props) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -39,9 +42,30 @@ function Navbar() {
               </Link>
             </div>
             <div className="navbar-item">
-              <Link to="/login" className="nav-links-login">
+              <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+                {props.userId ? (
+                  <button
+                    className="logout-button"
+                    onClick={() => {
+                      googleLogout();
+                      props.handleLogout();
+                    }}
+                  >
+                    <p>LOGOUT</p>
+                  </button>
+                ) : (
+                  <div className="login-button">
+                    <GoogleLogin
+                      className="login-button"
+                      onSuccess={props.handleLogin}
+                      onError={(err) => console.log(err)}
+                    />
+                  </div>
+                )}
+              </GoogleOAuthProvider>
+              {/* <Link to="/login" className="nav-links-login">
                 <div className="navbar-item-text-login">LOGIN</div>
-              </Link>
+              </Link> */}
             </div>
           </span>
         </div>

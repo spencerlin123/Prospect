@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 .WholePage {
-    position: relative;
+  position: relative;
 }
 .Joined-Groups-header {
     display: flex;
@@ -36,10 +36,10 @@
 }
 
 .Join-Code-box:hover {
-    /* border-bottom: 4px solid rgb(239, 13, 13); */
-    transition: all 0.2s ease-out;
-    background: yellow;
-  }
+  /* border-bottom: 4px solid rgb(239, 13, 13); */
+  transition: all 0.2s ease-out;
+  background: yellow;
+}
 
 .nav-links-code{
     display: flex;

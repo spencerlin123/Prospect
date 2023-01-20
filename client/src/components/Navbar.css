@@ -246,7 +246,37 @@
   justify-content: space-around;
 }
 
-.skeleton-margin {
+.logout-button {
+  padding: 6px;
+  margin: 16px;
   margin-right: 32px;
-  margin-left: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Lato";
+  font-weight: 1000;
+  border: solid;
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.logout-button:hover {
+  padding: 6px;
+  margin: 16px;
+  margin-right: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Lato";
+  font-weight: 1000;
+  border: solid;
+  border-color: white;
+  background-color: white;
+  color: #000957;
+  font-size: 1.4rem;
+}
+
+.login-button {
+  margin: 16px;
+  margin-right: 32px;
 }
