@@ -14,6 +14,7 @@ import { get, post } from "../utilities";
 import Navbar from "./Navbar.js";
 import Home from "./pages/Home.js";
 import JoinedGroups from "./pages/JoinedGroups.js";
+import CreatedGroups from "./pages/CreatedGroups.js";
 
 /**
  * Define the "App" component
@@ -47,17 +48,18 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
       <Router>
-        <Skeleton
+        {/* <Skeleton
           path="/login"
-          handleLogin={handleLogin}
-          handleLogout={handleLogout}
-          userId={userId}
-        />
+          // handleLogin={handleLogin}
+          // handleLogout={handleLogout}
+          // userId={userId}
+        /> */}
         <Home path="/" />
         <NotFound default />
         <JoinedGroups path="/joined-groups" />
+        <CreatedGroups path="/created-groups" userId={userId} />
       </Router>
     </>
   );

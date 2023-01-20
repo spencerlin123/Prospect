@@ -19,3 +19,11 @@
   align-items: center;
   flex-direction: column;
 }
+
+.logout-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  display: flex;
+  justify-content: flex-end;
+}

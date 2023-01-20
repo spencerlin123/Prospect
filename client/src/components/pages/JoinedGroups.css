@@ -1,46 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 .WholePage {
-    position: relative;
+  position: relative;
 }
 .Joined-Groups-header {
-    display: flex;
-    height: 250px;
-    align-items: center;
-    justify-content: center;
-    color: #000957;
-    text-decoration: underline;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 1000;
+  display: flex;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
 }
 .Join-Code-box {
-    display: flex;
-    height: 65px;
-    padding: 10px;
-    margin: 15px;
-    position: fixed;
-    bottom:0;
-    right:0;
+  display: flex;
+  height: 65px;
+  padding: 10px;
+  margin: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .Join-Code-box:hover {
-    /* border-bottom: 4px solid rgb(239, 13, 13); */
-    transition: all 0.2s ease-out;
-    background: yellow;
-  }
+  /* border-bottom: 4px solid rgb(239, 13, 13); */
+  transition: all 0.2s ease-out;
+  background: yellow;
+}
 
 .Join-Code-text {
-    display: flex;
-    width: 200px;
-    border: 3px solid #000957;
-    align-items: center;
-    font-family: "Lato";
-    font-weight: 1000;
-    justify-content: space-around;
+  display: flex;
+  width: 200px;
+  border: 3px solid #000957;
+  align-items: center;
+  font-family: "Lato";
+  font-weight: 1000;
+  justify-content: space-around;
 }
 
 .Plus-sign {
-    font-family: "Lato";
-    font-weight: 1000; 
+  font-family: "Lato";
+  font-weight: 1000;
 }

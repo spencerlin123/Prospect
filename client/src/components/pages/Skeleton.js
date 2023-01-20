@@ -24,11 +24,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
               LOGOUT
             </button>
           ) : (
-            <GoogleLogin
-              onSuccess={handleLogin}
-              onError={(err) => console.log(err)}
-              className="login"
-            />
+            <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
           )}
         </GoogleOAuthProvider>
       </div>
