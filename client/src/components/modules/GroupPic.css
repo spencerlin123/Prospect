@@ -2,8 +2,6 @@
     display: flex;
     width: 225px;
     height: 225px;
-    /* flex-shrink: 0; */
-    
 }
 
 .GroupPic-image {

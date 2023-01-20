@@ -5,30 +5,35 @@ import { Group } from "../modules/Group";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
 function JoinedGroups(props) {
+  let information_list = [{img_url:"https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445", title: "dog", description: "A cute doggie", prospects: 1 }, {img_url: "https://th-thumbnailer.cdn-si-edu.com/bZAar59Bdm95b057iESytYmmAjI=/1400x1050/filters:focal(594x274:595x275)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/95/db/95db799b-fddf-4fde-91f3-77024442b92d/egypt_kitty_social.jpg", title: "cat", description: "A cute cat", prospects: 1 }, {img_url: "https://pkimgcdn.peekyou.com/431f08b5929cc20395d7c2562721ba23.jpeg" , title: "Ben", description: "Cute Ben", prospects: 1 }]
   return (
     <>
       <div>
         {props.userId ? (
           <div className="Whole Page">
             <b className="Joined-Groups-header">JOINED GROUPS</b>
-            <Group
-              img_url="https://www.cdc.gov/healthypets/images/pets/cute-dog-headshot.jpg?_=42445"
-              title="dog"
-              description="dddd"
-              prospects={8}
-            />
-            <div className="line">
-              <div className="Join-Code-box">
-                <Link to="/entercode/" className="nav-links-code">
-                  <div className="Join-Code-text">JOIN WITH A CODE</div>
-                  <div className="Plus-sign">+</div>
-                </Link>
+            {information_list.map((group_info) => (
+              <div>
+                <Group
+                img_url={group_info.img_url}
+                title={group_info.title}
+                description={group_info.description}
+                prospects={group_info.prospects}
+                />
               </div>
+            ))}
+
+            <div className="JoinedGroups-line">
+              <Link to="/entercode">
+                <div className="JoinedGroups-container">
+                  JOIN WITH A CODE +
+                </div>
+              </Link>
             </div>
           </div>
         ) : (
           <div>
-            <b className="must-login">Please log in</b>
+            <b className="JoinedGroups-login">Please log in</b>
           </div>
         )}
       </div>

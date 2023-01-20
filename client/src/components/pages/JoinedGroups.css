@@ -1,8 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
-
-.WholePage {
-  position: relative;
-}
 .Joined-Groups-header {
   display: flex;
   height: 250px;
@@ -15,48 +10,35 @@
   font-weight: 1000;
 }
 
-.line {
-  height: 0;
+.JoinedGroups-line {
+  height: 75px;
   width: 100%;
   display: flex;
-  bottom: 75px;
+  bottom: 0px;
   border: 0.5px solid grey;
   position: fixed;
+  background: white;
 }
-.Join-Code-box {
+
+.JoinedGroups-container {
   display: flex;
+  border: 3px solid #000957;
   padding: 10px;
   margin: 15px;
   position: fixed;
   bottom: 0;
   right: 0;
-  border: 3px solid #000957;
-}
-
-.Join-Code-box:hover {
-  /* border-bottom: 4px solid rgb(239, 13, 13); */
-  transition: all 0.2s ease-out;
-  background: yellow;
-}
-
-.nav-links-code {
-  display: flex;
-  flex-direction: row;
-  text-decoration: None;
-}
-
-.Join-Code-text {
-  width: 170px;
+  color: #000957;
   font-family: "Lato";
   font-weight: 1000;
 }
 
-.Plus-sign {
-  font-family: "Lato";
-  font-weight: 1000;
+.JoinedGroups-container:hover {
+    color: white;
+    background: #000957
 }
 
-.must-login {
+.JoinedGroups-login {
   display: flex;
   height: 650px;
   align-items: center;
