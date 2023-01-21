@@ -1,0 +1,11 @@
+.CreatedGroupPic-pic {
+    display: flex;
+    width: 225px;
+    height: 225px;
+}
+
+.CreatedGroupPic-image {
+    object-fit: cover;
+    width: 225px;
+    height: 225px;
+}

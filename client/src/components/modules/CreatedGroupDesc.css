@@ -1,0 +1,23 @@
+.CreatedGroupDesc-container {
+    width: 100%;
+    margin-left: 32px;
+}
+
+.CreatedGroupDesc-title {
+    font-family: "Lato";
+    font-weight: 900;
+    font-size: 32px;
+    color: #000957;
+}
+
+.CreatedGroupDesc-Description {
+    font-family: "Lato";
+    font-size: 16px;
+    color: #717171;
+}
+
+.CreatedGroupDesc-Prospects {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 16px;
+}
