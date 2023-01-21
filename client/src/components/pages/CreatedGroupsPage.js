@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./CreatedGroupsPage.css";
 import { Link } from "@reach/router";
 import { Group } from "../modules/Group";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
-import {get} from "../../utilities";
+import { get } from "../../utilities";
 
 function CreatedGroupsPage(props) {
   const [groups, setGroups] = useState([]);
@@ -18,7 +18,7 @@ function CreatedGroupsPage(props) {
       <div>
         {props.userId ? (
           <div>
-            <b className="CreatedGroups-header">JOINED GROUPS</b>
+            <b className="CreatedGroups-header">CREATED GROUPS</b>
             {groups.map((group_info) => (
               <div>
                 <Group
@@ -31,8 +31,8 @@ function CreatedGroupsPage(props) {
             ))}
 
             <div className="CreatedGroups-line">
-              <Link to="/entercode">
-                <div className="CreatedGroups-container">JOIN WITH A CODE +</div>
+              <Link to="/createnewgroup">
+                <div className="CreatedGroups-container">CREATE NEW GROUP +</div>
               </Link>
             </div>
           </div>
