@@ -10,7 +10,35 @@
   font-weight: 1000;
 }
 
-.must-login {
+.CreatedGroups-line {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  bottom: 0px;
+  border: 0.5px solid grey;
+  position: fixed;
+  background: white;
+}
+
+.CreatedGroups-container {
+  display: flex;
+  border: 3px solid #000957;
+  padding: 10px;
+  margin: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: #000957;
+  font-family: "Lato";
+  font-weight: 1000;
+}
+
+.CreatedGroups-container:hover {
+  color: white;
+  background: #000957;
+}
+
+.CreatedGroups-login {
   display: flex;
   height: 650px;
   align-items: center;
