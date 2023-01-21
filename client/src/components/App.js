@@ -13,8 +13,8 @@ import { get, post } from "../utilities";
 
 import Navbar from "./Navbar.js";
 import Home from "./pages/Home.js";
-import JoinedGroups from "./pages/JoinedGroups.js";
-import CreatedGroups from "./pages/CreatedGroups.js";
+import JoinedGroups from "./pages/JoinedGroupsPage.js";
+import CreatedGroups from "./pages/CreatedGroupsPage.js";
 
 /**
  * Define the "App" component

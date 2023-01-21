@@ -1,4 +1,4 @@
-.Created-Groups-header {
+.JoinedGroupsPage-header {
   display: flex;
   height: 250px;
   align-items: center;
@@ -10,7 +10,7 @@
   font-weight: 1000;
 }
 
-.CreatedGroups-line {
+.JoinedGroupsPage-line {
   height: 75px;
   width: 100%;
   display: flex;
@@ -20,7 +20,7 @@
   background: white;
 }
 
-.CreatedGroups-container {
+.JoinedGroupsPage-container {
   display: flex;
   border: 3px solid #000957;
   padding: 10px;
@@ -33,12 +33,12 @@
   font-weight: 1000;
 }
 
-.CreatedGroups-container:hover {
-  color: white;
-  background: #000957;
+.JoinedGroupsPage-container:hover {
+    color: white;
+    background: #000957
 }
 
-.CreatedGroups-login {
+.JoinedGroupsPage-login {
   display: flex;
   height: 650px;
   align-items: center;
