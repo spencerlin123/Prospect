@@ -11,6 +11,7 @@ const express = require("express");
 
 // import models so we can interact with the database
 const User = require("./models/user");
+const Group = require("./models/group");
 
 // import authentication library
 const auth = require("./auth");
@@ -42,6 +43,26 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 // | write your API methods below!|
 // |------------------------------|
+
+router.get("/groups", (req, res) => {
+  Group.find({}).then((groups) => {
+    res.send(groups);
+  })
+})
+
+// router.get("/tests", (req, res) => {
+// // create 3 group documents here
+//   const group1 = new Group({
+//     img_url: "https://pkimgcdn.peekyou.com/431f08b5929cc20395d7c2562721ba23.jpeg",
+//     title: "Ben",
+//     description: "This is a cute Ben",
+//     prospects: 1
+//   });
+
+//   group1.save().then((group1) => {
+//     res.send(group1);
+//   })
+// })
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
