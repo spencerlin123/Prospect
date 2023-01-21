@@ -16,6 +16,7 @@ import Home from "./pages/Home.js";
 import JoinedGroups from "./pages/JoinedGroupsPage.js";
 import CreatedGroups from "./pages/CreatedGroupsPage.js";
 import CreateNewGroups from "./pages/CreateNewGroupsPage.js";
+import GroupCode from "./pages/GroupCode.js";
 
 /**
  * Define the "App" component
@@ -63,6 +64,7 @@ const App = () => {
         <CreatedGroups path="/created-groups" userId={userId} />
         <CreateNewGroups path="/createnewgroup" userId={userId} />
 
+        <GroupCode path="/entercode" userId={userId} />
       </Router>
     </>
   );
