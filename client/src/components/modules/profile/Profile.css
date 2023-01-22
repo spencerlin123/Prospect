@@ -1,29 +1,18 @@
 .Profile-container {
-    display: flex;
-    border: 1px solid white;
-    padding: 32px;
-    padding-top: 0px;
-    margin: 25px;
-    width: 250px;
-    height: 300px;
-    margin-top: 0px;
-    text-decoration: none;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0.65
-  }
-  
-  .Profile-container:hover {
-    background: #d9d9d9;
-  }
+  display: flex;
+  padding-top: 0px;
+  margin: 25px;
+  width: 250px;
+  height: 300px;
+  margin-top: 0px;
+  text-decoration: none;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .Profile-pic {
-    margin-top: 0px;
-    border: black
-  }
-
-  .Profile-desc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+.Profile-pic {
+  margin-top: 0px;
+  border: black;
+  grid-column: 4 / -1;
+  grid-row: 1;
+}
