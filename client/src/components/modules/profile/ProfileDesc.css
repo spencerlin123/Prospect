@@ -1,7 +1,6 @@
 .ProfileDesc-container {
     width: 100%;
     display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 55px;
 
@@ -12,8 +11,6 @@
     font-weight: 700;
     font-size: 25px;
     color: #000957;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     
 }
