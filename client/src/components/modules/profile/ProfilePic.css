@@ -1,0 +1,14 @@
+.ProfilePic-pic {
+    display: flex;
+    width: 152px;
+    height: 152px;
+}
+
+.ProfilePic-image {
+    object-fit: cover;
+    width: 152px;
+    height: 152px;
+    border-radius: 50%;
+    border: solid;
+    border-color: blue;
+}

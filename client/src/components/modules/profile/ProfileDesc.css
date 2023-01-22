@@ -1,0 +1,19 @@
+.ProfileDesc-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55px;
+
+}
+
+.ProfileDesc-name {
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 25px;
+    color: #000957;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}

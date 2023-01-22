@@ -1,8 +1,12 @@
+import React from "react";
 import "./GroupCode.css";
 
-function GroupCode(){
+function GroupCode(props){
     return(
-        <div>Enter Code</div>
+        <div className="GroupCode-page">
+            <h1>Prospect</h1>
+            <div className="GroupCode-container"></div>
+        </div>
     )
 }
 

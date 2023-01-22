@@ -1,0 +1,36 @@
+.ProspectsPage-header {
+    display: flex;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+    color: #000957;
+    text-decoration: underline;
+    font-size: 30px;
+    font-family: "Lato";
+    font-weight: 1000;
+    margin-bottom: -75px;
+  }
+  
+  .ProspectsPage-container {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    color: #000957;
+    font-family: "Lato";
+    font-weight: 1000;
+    flex-wrap: wrap;
+  }
+  
+  .PropspectsPage-login {
+    display: flex;
+    height: 650px;
+    align-items: center;
+    justify-content: center;
+    color: #000957;
+    text-decoration: underline;
+    font-size: 30px;
+    font-family: "Lato";
+    font-weight: 1000;
+  }
+
+  

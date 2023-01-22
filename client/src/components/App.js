@@ -17,13 +17,15 @@ import JoinedGroups from "./pages/JoinedGroupsPage.js";
 import CreatedGroups from "./pages/CreatedGroupsPage.js";
 import CreateNewGroups from "./pages/CreateNewGroupsPage.js";
 import GroupCode from "./pages/GroupCode.js";
-import Prospects from "./pages/Prospects.js";
+import ProspectsPage from "./pages/ProspectsPage.js";
 
 /**
  * Define the "App" component
  */
 const App = () => {
   const [userId, setUserId] = useState(undefined);
+
+  const [titles, setTitles] = useState([])
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -65,6 +67,11 @@ const App = () => {
         <CreatedGroups path="/created-groups" userId={userId} />
         <CreateNewGroups path="/createnewgroup" userId={userId} />
         <GroupCode path="/entercode" userId={userId} />
+        <ProspectsPage path="/created-groups/:title" userId = {userId}/>
+        {/* {titles.map((title) => (
+          <Prospects path={"/created-groups/" + title} userId = {userId}/>
+        ))} */}
+        
       </Router>
     </>
   );

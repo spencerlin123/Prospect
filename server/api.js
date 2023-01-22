@@ -50,6 +50,12 @@ router.get("/groups", (req, res) => {
   })
 })
 
+router.get("/users", (req, res) => {
+  User.find({}).then((users) => {
+    res.send(users);
+  })
+})
+
 // router.get("/tests", (req, res) => {
 // // create 3 group documents here
 //   const group1 = new Group({
