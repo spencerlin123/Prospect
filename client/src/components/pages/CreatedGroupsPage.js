@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CreatedGroupsPage.css";
 import { Link } from "@reach/router";
-import { Group } from "../modules/Group";
+import { Group } from "../modules/CGroup";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import { get } from "../../utilities";
 

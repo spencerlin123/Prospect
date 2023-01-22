@@ -1,28 +1,22 @@
-import "./CreateNewGroupsPage.css"
-import React, {useState, useEffect} from "react";
+import "./CreateNewGroupsPage.css";
+import React, { useState, useEffect } from "react";
 import { Link } from "@reach/router";
-import { Group } from "../modules/Group";
+import { Group } from "../modules/CGroup";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
-import {get} from "../../utilities";
+import { get } from "../../utilities";
 
-
-
-function CreateNewGroupsPage (props) {
-
-
-return (
+function CreateNewGroupsPage(props) {
+  return (
     <>
       <div>
         {props.userId ? (
           <div>
             <>
-                <b className="CreateNewGroups-header">CREATE NEW GROUP</b>
+              <b className="CreateNewGroups-header">CREATE NEW GROUP</b>
             </>
             <div className="CreateNewGroups-line">
               <Link to="/created-groups">
-                <div className="CreateNewGroups-container">
-                  SUBMIT
-                </div>
+                <div className="CreateNewGroups-container">SUBMIT</div>
               </Link>
             </div>
           </div>

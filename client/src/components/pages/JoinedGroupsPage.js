@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./JoinedGroupsPage.css";
 import { Link } from "@reach/router";
-import { Group } from "../modules/Group";
+import { Group } from "../modules/JGroup";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
-import {get} from "../../utilities";
+import { get } from "../../utilities";
 
 function JoinedGroupsPage(props) {
   const [groups, setGroups] = useState([]);
@@ -22,19 +22,17 @@ function JoinedGroupsPage(props) {
             {groups.map((group_info) => (
               <div>
                 <Group
-                img_url={group_info.img_url}
-                title={group_info.title}
-                description={group_info.description}
-                prospects={group_info.prospects}
+                  img_url={group_info.img_url}
+                  title={group_info.title}
+                  description={group_info.description}
+                  prospects={group_info.prospects}
                 />
               </div>
             ))}
 
             <div className="JoinedGroupsPage-line">
               <Link to="/entercode">
-                <div className="JoinedGroupsPage-container">
-                  JOIN WITH A CODE +
-                </div>
+                <div className="JoinedGroupsPage-container">JOIN WITH A CODE +</div>
               </Link>
             </div>
           </div>
