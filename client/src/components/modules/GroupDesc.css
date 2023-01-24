@@ -1,23 +1,27 @@
 .GroupDesc-container {
-    width: 100%;
-    margin-left: 32px;
+  width: 100%;
+  margin-left: 32px;
 }
 
 .GroupDesc-title {
-    font-family: "Lato";
-    font-weight: 900;
-    font-size: 32px;
-    color: #000957;
+  font-family: "Lato";
+  font-weight: 900;
+  font-size: 32px;
+  color: #000957;
+  margin-top: 8px;
 }
 
 .GroupDesc-Description {
-    font-family: "Lato";
-    font-size: 16px;
-    color: #717171;
+  font-family: "Lato";
+  font-size: 16px;
+  color: #717171;
+  margin-top: 32px;
 }
 
 .GroupDesc-Prospects {
-    font-family: 'Lato';
-    font-weight: 700;
-    font-size: 16px;
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 16px;
+  color: #000957;
+  margin-top: 8px;
 }

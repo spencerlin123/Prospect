@@ -6,7 +6,7 @@ import { GroupPic } from "./GroupPic";
 
 export const Group = (props) => {
   return (
-    <div className="Group-container">
+    <div className="JGroup-container">
       <GroupPic img_url={props.img_url} />
       <GroupDesc title={props.title} description={props.description} prospects={props.prospects} />
     </div>

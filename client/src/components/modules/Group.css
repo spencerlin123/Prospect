@@ -1,9 +1,8 @@
 .Group-container {
   display: flex;
-  border: 1px solid white;
   padding: 32px;
   margin: 64px;
-  margin-top: -70px;
+  margin-top: -65px;
   text-decoration: none;
 }
 

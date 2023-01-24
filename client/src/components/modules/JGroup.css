@@ -1,4 +1,4 @@
-.Group-container {
+.JGroup-container {
   display: flex;
   border: 1px solid white;
   padding: 32px;
@@ -7,6 +7,6 @@
   text-decoration: none;
 }
 
-.Group-container:hover {
-  background-color: white;
+.JGroup-container:hover {
+  background: white;
 }

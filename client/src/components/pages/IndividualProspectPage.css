@@ -1,4 +1,4 @@
-.JoinedGroupsPage-header {
+.ProspectsPage-header {
   display: flex;
   height: 250px;
   align-items: center;
@@ -8,37 +8,20 @@
   font-size: 30px;
   font-family: "Lato";
   font-weight: 1000;
+  margin-bottom: -75px;
 }
 
-.JoinedGroupsPage-line {
-  height: 75px;
-  width: 100%;
+.ProspectsPage-container {
   display: flex;
-  bottom: 0px;
-  border: 0.5px solid grey;
-  position: fixed;
-  background: white;
-}
-
-.JoinedGroupsPage-container {
-  display: flex;
-  border: 3px solid #000957;
   padding: 10px;
-  margin: 15px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
+  justify-content: center;
   color: #000957;
   font-family: "Lato";
   font-weight: 1000;
+  flex-wrap: wrap;
 }
 
-.JoinedGroupsPage-container:hover {
-  color: white;
-  background: #000957;
-}
-
-.JoinedGroupsPage-login {
+.PropspectsPage-login {
   display: flex;
   height: 650px;
   align-items: center;

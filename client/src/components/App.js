@@ -18,6 +18,7 @@ import CreatedGroups from "./pages/CreatedGroupsPage.js";
 import CreateNewGroups from "./pages/CreateNewGroupsPage.js";
 import GroupCode from "./pages/GroupCode.js";
 import ProspectsPage from "./pages/ProspectsPage.js";
+import IndividualProspectPage from "./pages/IndividualProspectPage.js";
 
 /**
  * Define the "App" component
@@ -25,7 +26,7 @@ import ProspectsPage from "./pages/ProspectsPage.js";
 const App = () => {
   const [userId, setUserId] = useState(undefined);
 
-  const [titles, setTitles] = useState([])
+  const [titles, setTitles] = useState([]);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -67,11 +68,11 @@ const App = () => {
         <CreatedGroups path="/created-groups" userId={userId} />
         <CreateNewGroups path="/createnewgroup" userId={userId} />
         <GroupCode path="/entercode" userId={userId} />
-        <ProspectsPage path="/created-groups/:title" userId = {userId}/>
+        <ProspectsPage path="/created-groups/:title" userId={userId} />
+        <IndividualProspectPage path="/createded-groups/:title/:individual" />
         {/* {titles.map((title) => (
           <Prospects path={"/created-groups/" + title} userId = {userId}/>
         ))} */}
-        
       </Router>
     </>
   );

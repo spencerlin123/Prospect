@@ -274,6 +274,7 @@
   background-color: white;
   color: #000957;
   font-size: 1.4rem;
+  cursor: pointer;
 }
 
 .login-button {
