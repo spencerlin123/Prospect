@@ -1,101 +1,134 @@
 .CreateNewGroups-total {
   padding: 0 48px;
-  
 }
 
 /* .CreateNewContainer-inputbox {
     box-shadow: 2px 2px #191717;
 } */
 .CreateNewGroups-header {
-    display: flex;
-    height: 250px;
-    align-items: center;
-    justify-content: center;
-    color: #000957;
-    text-decoration: underline;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 1000;
-  }
-  
+  display: flex;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+}
+
 .CreateNewGroups-line {
-    height: 75px;
-    width: 100%;
-    display: flex;
-    bottom: 0px;
-    border: 0.5px solid grey;
-    position: fixed;
-    background: white;
-  }
-  
+  height: 75px;
+  width: 100%;
+  display: flex;
+  bottom: 0px;
+  border: 0.5px solid grey;
+  position: fixed;
+  background: white;
+}
+
 .CreateNewGroups-container {
-    display: flex;
-    border: 3px solid #000957;
-    padding: 10px;
-    margin: 15px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    color: #000957;
-    font-family: "Lato";
-    font-weight: 1000;
-  }
+  display: flex;
+  border: 3px solid #000957;
+  padding: 10px;
+  margin: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: #000957;
+  font-family: "Lato";
+  font-weight: 1000;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
 .CreateNewGroups-image {
-    background-color: rgb(22, 13, 118);
-    color: white;
-    padding: 0.5rem;
-    font-family: sans-serif;
-    border-radius: 0.3rem;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
+  background-color: rgb(22, 13, 118);
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
 
-  .CreateNewGroups-text {
-    color: #000957;
-    font-weight: bold;
-    font-size: 20px;
-  }
+.CreateNewGroups-text {
+  color: #000957;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Lato";
+  font-weight: 800;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
 
-  
+.CreateNewGroups-text-top {
+  color: #000957;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Lato";
+  font-weight: 800;
+  margin-top: -64px;
+  margin-bottom: 16px;
+}
+
 .CreateNewGroups-container:hover {
-    color: white;
-    background: #000957;
-  }
-  
+  color: white;
+  background: #000957;
+}
+
 .CreateNewGroups-login {
-    display: flex;
-    height: 650px;
-    align-items: center;
-    justify-content: center;
-    color: #000957;
-    text-decoration: underline;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 1000;
-  }
+  display: flex;
+  height: 650px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+}
 
+input[type="file"]::file-selector-button {
+  border: 2px solid #000957;
+  padding: 0.2em 0.4em;
+  background-color: #000957;
+  color: #eeeef1;
+  transition: 1s;
+  font-family: "Lato";
+  font-weight: 700;
+}
 
-  input[type="file"]::file-selector-button {
-    border: 2px solid #201981;
-    padding: 0.2em 0.4em;
-    border-radius: 0.2em;
-    background-color: #1a119f;
-    color: #eeeef1;
-    transition: 1s;
-  }
-  
-  input[type="file"]::-ms-browse:hover {
-    background-color: #242690;
-    border: 2px solid #1c26b3;
-  }
-  
-  input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: #2624af;
-    border: 2px solid #241ba1;
-  }
-  
-  input[type="file"]::file-selector-button:hover {
-    background-color: #262298;
-    border: 2px solid #eff1f1;
-  }
+input[type="file"]::-ms-browse:hover {
+  background-color: #000957;
+  border: 2px solid #000957;
+  cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #000957;
+  border: 2px solid #000957;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #000957;
+  border: 2px solid #eff1f1;
+  cursor: pointer;
+}
+
+.CreateNewContainer-inputbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  height: 32px;
+  font-family: "Lato";
+}
+
+.emptyspace {
+  height: 150px;
+  width: 100%;
+  background-color: white;
+}

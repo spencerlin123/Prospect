@@ -11,7 +11,14 @@
 }
 
 .ProfileDesc-container:hover {
-  opacity: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -100px;
+  background-color: yellow;
+  height: 100%;
+  padding-top: 50px;
+  z-index: -500;
 }
 
 .ProfileDesc-name {

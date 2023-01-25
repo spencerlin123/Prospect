@@ -29,7 +29,7 @@ function JoinedGroupsPage(props) {
                 />
               </div>
             ))}
-
+            <div className="Jemptyspace" />
             <div className="JoinedGroupsPage-line">
               <Link to="/entercode">
                 <div className="JoinedGroupsPage-container">JOIN WITH A CODE +</div>

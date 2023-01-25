@@ -8,8 +8,16 @@ export const Question = (props) => {
 
   return (
     <div>
-      <input className="CreateNewContainer-inputbox" type="text" placeholder={props.text} value={desc} onChange={(e)=>{setDesc(e.target.value)}} />
+      <input
+        className="CreateNewContainer-inputbox"
+        type="text"
+        // style="border:1px solid #000957"
+        placeholder={props.text}
+        value={desc}
+        onChange={(e) => {
+          setDesc(e.target.value);
+        }}
+      />
     </div>
   );
-
 };

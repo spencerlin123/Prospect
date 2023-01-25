@@ -1,25 +1,44 @@
 .AddButton {
+  font-size: 15px;
+  font-family: "Lato";
+  text-align: center;
+  background-color: #000957;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 700;
+  padding-left: 40px;
+  padding-right: 40px;
+}
 
-    font-size: 15px;
-    font-family: "Lato";
-    text-align: center;
-    background-color: #000957;
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 10px;
-
+.AddButton:hover {
+  border: solid;
+  border-width: 4px;
+  border-color: #000957;
+  cursor: pointer;
+  font-size: 17px;
 }
 
 .Component {
+  color: white;
+  font-size: 15px;
+  font-family: "Lato";
+  text-align: center;
+  background-color: #000957;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+}
 
-    color: white;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-color: darkblue;
-    border-radius: 15px;
-    padding: 10px;
-    margin: 10px;
+.CreateNewContainer-inputbox {
+  margin-top: 4px;
+  border: solid;
+  border-width: 1px;
+  border-color: #000957;
+}
 
+.CreateNewContainer-inputbox:focus {
+  border: solid;
+  border-width: 1px;
+  border-color: #000957;
 }

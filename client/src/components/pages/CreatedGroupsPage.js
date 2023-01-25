@@ -29,7 +29,7 @@ function CreatedGroupsPage(props) {
                 />
               </div>
             ))}
-
+            <div className="Cemptyspace" />
             <div className="CreatedGroups-line">
               <Link to="/createnewgroup">
                 <div className="CreatedGroups-container">CREATE NEW GROUP +</div>
