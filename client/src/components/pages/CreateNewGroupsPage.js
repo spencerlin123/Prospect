@@ -4,7 +4,7 @@ import { Link } from "@reach/router";
 import { Question } from "../modules/QuestionBox.js"
 // import "../modules/Questions.css"
 import { Button } from "../modules/AddQuestionButton.js"
-import { Group } from "../modules/Group";
+import { Group } from "../modules/CGroup";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import { get } from "../../utilities";
 
@@ -54,7 +54,7 @@ return (
             {/* <span id="file-chosen">No file chosen</span> */}
             <div className="CreateNewGroups-text">Describe your group below.</div>
             <input className="CreateNewContainer-inputbox" type="text" placeholder="Enter Answer Here" value={desc} onChange={(e)=>{setDesc(e.target.value)}} />
-            <div className="CreateNewGroups-text">Please list some questions for your prospects below (5 question limit).</div>
+            <div className="CreateNewGroups-text">Please list some questions for your prospects below (10 question limit).</div>
 
             {components.map((item, i) => ( <Question text={item} /> ))} 
             
