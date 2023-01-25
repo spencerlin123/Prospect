@@ -1,3 +1,11 @@
+.CreateNewGroups-total {
+  padding: 0 48px;
+  
+}
+
+/* .CreateNewContainer-inputbox {
+    box-shadow: 2px 2px #191717;
+} */
 .CreateNewGroups-header {
     display: flex;
     height: 250px;
@@ -32,6 +40,23 @@
     font-family: "Lato";
     font-weight: 1000;
   }
+
+.CreateNewGroups-image {
+    background-color: rgb(22, 13, 118);
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  .CreateNewGroups-text {
+    color: #000957;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
   
 .CreateNewGroups-container:hover {
     color: white;
@@ -48,4 +73,29 @@
     font-size: 30px;
     font-family: "Lato";
     font-weight: 1000;
+  }
+
+
+  input[type="file"]::file-selector-button {
+    border: 2px solid #201981;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    background-color: #1a119f;
+    color: #eeeef1;
+    transition: 1s;
+  }
+  
+  input[type="file"]::-ms-browse:hover {
+    background-color: #242690;
+    border: 2px solid #1c26b3;
+  }
+  
+  input[type="file"]::-webkit-file-upload-button:hover {
+    background-color: #2624af;
+    border: 2px solid #241ba1;
+  }
+  
+  input[type="file"]::file-selector-button:hover {
+    background-color: #262298;
+    border: 2px solid #eff1f1;
   }
