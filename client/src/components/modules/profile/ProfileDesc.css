@@ -7,6 +7,7 @@
   height: 100%;
   padding-top: 50px;
   opacity: 0.75;
+  z-index: -1000;
 }
 
 .ProfileDesc-container:hover {
