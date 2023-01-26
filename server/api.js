@@ -47,14 +47,14 @@ router.post("/initsocket", (req, res) => {
 router.get("/groups", (req, res) => {
   Group.find({}).then((groups) => {
     res.send(groups);
-  })
-})
+  });
+});
 
 router.get("/users", (req, res) => {
   User.find({}).then((users) => {
     res.send(users);
-  })
-})
+  });
+});
 
 router.post("/groups", (req, res) => {
   const newGroup = new Group({
@@ -64,20 +64,20 @@ router.post("/groups", (req, res) => {
     prospects: 0,
     user_id: [],
     questions: req.body.questions,
-    group_code: req.body.creator_id
+    group_code: req.body.creator_id,
   });
-  newGroup.save().then(group => res.send(group));
-})
+  newGroup.save().then((group) => res.send(group));
+});
 
-router.post("/dummytest", async (req, res) => {
-  const group = await groups.findOne({group_code: req.body.group_code});
+router.post("/groups", async (req, res) => {
+  const group = await groups.findOne({ group_code: req.body.group_code });
 
-  group.user_id.concat("278378");
+  group.user_id.concat(req.user);
 
   await group.save();
 
-  res.send({success: true});
-})
+  res.send({ success: true });
+});
 
 // router.get("/tests", (req, res) => {
 // // create 3 group documents here

@@ -41,7 +41,7 @@ function CreateNewGroupsPage(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/groups", { title: desc1, description: desc2, questions: }).then((res) => console.log(res));
+    post("/api/groups", { title: desc1, description: desc2 }).then((res) => console.log(res));
   };
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -49,11 +49,10 @@ function CreateNewGroupsPage(props) {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = function() {
+    reader.onload = function () {
       setSelectedFile(reader.result);
-    }
-  }
-  
+    };
+  };
 
   // description: req.body.description,
   //   img_url: req.body.img_url,
@@ -122,7 +121,9 @@ function CreateNewGroupsPage(props) {
               <Link to="/created-groups">
                 {/* <div className="CreateNewGroups-container">SUBMIT</div> */}
               </Link>
-              <button type="submit" className="GroupSubmit" value="Submit" onClick={handleSubmit}>test</button>
+              <button type="submit" className="GroupSubmit" value="Submit" onClick={handleSubmit}>
+                test
+              </button>
             </div>
           </div>
         ) : (
