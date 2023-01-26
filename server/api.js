@@ -56,6 +56,29 @@ router.get("/users", (req, res) => {
   })
 })
 
+router.post("/groups", (req, res) => {
+  const newGroup = new Group({
+    title: req.body.title,
+    description: req.body.description,
+    img_url: req.body.img_url,
+    prospects: 0,
+    user_id: [],
+    questions: req.body.questions,
+    group_code: req.body.creator_id
+  });
+  newGroup.save().then(group => res.send(group));
+})
+
+router.post("/dummytest", async (req, res) => {
+  const group = await groups.findOne({group_code: req.body.group_code});
+
+  group.user_id.concat("278378");
+
+  await group.save();
+
+  res.send({success: true});
+})
+
 // router.get("/tests", (req, res) => {
 // // create 3 group documents here
 //   const group1 = new Group({

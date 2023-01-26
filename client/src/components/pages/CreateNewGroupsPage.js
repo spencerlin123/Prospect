@@ -6,7 +6,7 @@ import { Question } from "../modules/QuestionBox.js";
 import { Button } from "../modules/AddQuestionButton.js";
 import { Group } from "../modules/CGroup";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
-import { get } from "../../utilities";
+import { post } from "../../utilities";
 
 // function showDiv() {
 //   document.getElementById('Question').style.display = "block";
@@ -34,6 +34,33 @@ function CreateNewGroupsPage(props) {
   // actualBtn.addEventListener('change', function(){
   //   fileChosen.textContent = this.files[0].name
   // })
+  // function postOnSubmit(props) {
+  //   post("/groups", (res, req) => {
+  //     req.body
+  //   }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    post("/api/groups", { title: desc1, description: desc2, questions: }).then((res) => console.log(res));
+  };
+
+  const [selectedFile, setSelectedFile] = useState(null);
+  const fileChangeHandler = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function() {
+      setSelectedFile(reader.result);
+    }
+  }
+  
+
+  // description: req.body.description,
+  //   img_url: req.body.img_url,
+  //   prospects: 0,
+  //   user_id: [],
+  //   questions: req.body.questions,
+  //   group_code: req.body.creator_id
 
   function addComponent() {
     if (componentNames.length > 0) {
@@ -63,7 +90,8 @@ function CreateNewGroupsPage(props) {
               />
               <div className="CreateNewGroups-text">Add group profile image below.</div>
               {/* <label for="fileUpload">Upload file</label> */}
-              <input type="file" id="actual-btn" />
+              <input type="file" id="actual-btn" onChange={fileChangeHandler} />
+              {/* {selectedFile != null && <img src={selectedFile}/>} */}
               {/* <label className="CreateNewGroups-image" for="actual-btn">Upload File</label> */}
               {/* <span id="file-chosen">No file chosen</span> */}
               <div className="CreateNewGroups-text">Describe your group below.</div>
@@ -92,8 +120,9 @@ function CreateNewGroupsPage(props) {
                 text="Add Question"
               />
               <Link to="/created-groups">
-                <div className="CreateNewGroups-container">SUBMIT</div>
+                {/* <div className="CreateNewGroups-container">SUBMIT</div> */}
               </Link>
+              <button type="submit" className="GroupSubmit" value="Submit" onClick={handleSubmit}>test</button>
             </div>
           </div>
         ) : (
