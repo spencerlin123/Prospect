@@ -6,8 +6,9 @@ function GroupCode(props) {
   const [code, setCode] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/editGroup", { group_code: code }).then((res) => console.log(res));
+    post("/api/editGroup", { group_code: code }).then((res) => console.log(res)).catch((res) => console.log(JSON.stringify(res)));
   };
+
 
   return (
     <div className="GroupCode-page">

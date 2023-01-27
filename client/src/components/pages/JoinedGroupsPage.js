@@ -8,7 +8,7 @@ import { get } from "../../utilities";
 function JoinedGroupsPage(props) {
   const [groups, setGroups] = useState([]);
   useEffect(() => {
-    get("/api/groups").then((groupObjs) => {
+    get("/api/joinedgroups").then((groupObjs) => {
       setGroups(groupObjs);
     });
   }, []);

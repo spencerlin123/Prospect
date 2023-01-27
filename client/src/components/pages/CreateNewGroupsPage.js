@@ -15,6 +15,8 @@ import { post } from "../../utilities";
 function CreateNewGroupsPage(props) {
   const [desc1, setDesc1] = useState("");
   const [desc2, setDesc2] = useState("");
+  const [img, setImg] = useState("");
+
   const [components, setComponents] = useState(["Question 1"]);
   const [componentNames, setComponentNames] = useState([
     "Question 2",
@@ -114,7 +116,16 @@ function CreateNewGroupsPage(props) {
               />
               <div className="CreateNewGroups-text">Add group profile image below.</div>
               {/* <label for="fileUpload">Upload file</label> */}
-              <input type="file" id="actual-btn" onChange={fileChangeHandler} />
+              <input
+                className="CreateNewContainer-inputbox"
+                type="text"
+                placeholder="Input image URL here"
+                value={img}
+                onChange={(e) => {
+                  setImg(e.target.value);
+                }}
+              />
+              {/* <input type="file" id="actual-btn" onChange={fileChangeHandler} /> */}
               {/* {selectedFile != null && <img src={selectedFile}/>} */}
               {/* <label className="CreateNewGroups-image" for="actual-btn">Upload File</label> */}
               {/* <span id="file-chosen">No file chosen</span> */}

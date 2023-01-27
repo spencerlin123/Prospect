@@ -44,9 +44,17 @@ router.post("/initsocket", (req, res) => {
 // | write your API methods below!|
 // |------------------------------|
 
-router.get("/groups", (req, res) => {
-  Group.find({}).then((groups) => {
+router.get("/createdgroups", (req, res) => {
+  Group.find({creator_id: req.user.googleid}).then((groups) => {
     res.send(groups);
+  });
+});
+
+router.get("/joinedgroups", (req, res) => {
+  Group.find({user_id: req.user.googleid}).then((groups) => {
+    res.send(groups);
+
+    // const group = await Group.findOne({ group_code: req.body.group_code });
   });
 });
 
@@ -57,31 +65,49 @@ router.get("/users", (req, res) => {
 });
 
 router.post("/groups", (req, res) => {
-  const newGroup = new Group({
-    title: req.body.title,
-    description: req.body.description,
-    img_url: req.body.img_url,
-    prospects: 0,
-    user_id: [],
-    questions: req.body.questions,
-    group_code: req.body.group_code,
-  });
-  newGroup.save().then((group) => res.send(group));
+  if (req.user) {
+    const newGroup = new Group({
+      title: req.body.title,
+      description: req.body.description,
+      img_url: req.body.img_url,
+      prospects: 0,
+      user_id: [],
+      questions: req.body.questions,
+      group_code: req.body.group_code,
+      creator_id: req.user.googleid,
+    });
+    // console.log(req.user)
+    // console.log(newGroup)
+    newGroup.save().then((group) => res.send(group));
+  } else {
+    res.send({
+      succes: false,
+      reason: "not logged in"
+    })
+  }
 });
 
 router.post("/editGroup", async (req, res) => {
   // console.log(req);
   const group = await Group.findOne({ group_code: req.body.group_code });
-  console.log(group);
-  console.log(req.user.googleid);
+  if (!group.user_id.includes(req.user.googleid)) {
+    console.log(group);
+    console.log(req.user.googleid);
 
-  // group.user_id = group.user_id.concat(req.user.googleid);
-  group.user_id = [...group.user_id, req.user.googleid];
-  console.log(group);
+    // group.user_id = group.user_id.concat(req.user.googleid);
+    group.user_id = [...group.user_id, req.user.googleid];
+    group.prospects = group.user_id.length;
+    console.log(group);
 
-  await group.save();
+    await group.save();
+    res.send({ success: true });
+  } else {
+    res.status(400).send({ error: "You have already joined this group!" });
+  }
 
-  res.send({ success: true });
+  // if ((group.user_id).includes(req.user.googleid)) {
+  //   res.status(400).send('You have already joined this group!')
+  // }
 });
 
 // router.get("/tests", (req, res) => {
