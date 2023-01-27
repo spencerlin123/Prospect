@@ -22,7 +22,7 @@ function GroupCode(props) {
             setCode(e.target.value);
           }}
         />
-        <button type="submit" className="GroupCode-submit" value="Submit" onClick={handleSubmit}>
+        <button type="submit" className="GroupSubmit" value="Submit" onClick={handleSubmit}>
           SUBMIT
         </button>
         {/* <button className="GroupCode-submit">SUBMIT</button> */}
