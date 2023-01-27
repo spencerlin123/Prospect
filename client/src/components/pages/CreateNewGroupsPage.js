@@ -27,6 +27,18 @@ function CreateNewGroupsPage(props) {
     "Question 9",
     "Question 10",
   ]);
+  const [questions, setQuestions] = useState(["", "", "", "", "", "", "", "", "", ""]);
+
+  const handleQuestion = (event, i) => {
+    event.preventDefault();
+    let values = [...questions];
+    values[i] = event.target.value;
+    setQuestions(values);
+  };
+
+  useEffect(() => {
+    console.log(questions);
+  }, [questions]);
 
   // const actualBtn = document.getElementById('actual-btn');
   // const fileChosen = document.getElementById('file-chosen');
@@ -41,7 +53,12 @@ function CreateNewGroupsPage(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/groups", { title: desc1, description: desc2 }).then((res) => console.log(res));
+    post("/api/groups", {
+      title: desc1,
+      description: desc2,
+      img_url: selectedFile,
+      group_code: Math.floor(100000 + Math.random() * 900000),
+    }).then((res) => console.log(res));
   };
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -108,7 +125,7 @@ function CreateNewGroupsPage(props) {
               </div>
 
               {components.map((item, i) => (
-                <Question text={item} />
+                <Question text={item} handleChange={(e) => handleQuestion(e, i)} />
               ))}
               <div className="emptyspace" />
             </div>

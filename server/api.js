@@ -69,10 +69,15 @@ router.post("/groups", (req, res) => {
   newGroup.save().then((group) => res.send(group));
 });
 
-router.post("/groups", async (req, res) => {
-  const group = await groups.findOne({ group_code: req.body.group_code });
+router.post("/editGroup", async (req, res) => {
+  // console.log(req);
+  const group = await Group.findOne({ group_code: req.body.group_code });
+  console.log(group);
+  console.log(req.user.googleid);
 
-  group.user_id.concat(req.user);
+  // group.user_id = group.user_id.concat(req.user.googleid);
+  group.user_id = [...group.user_id, req.user.googleid];
+  console.log(group);
 
   await group.save();
 

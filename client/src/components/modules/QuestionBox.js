@@ -16,6 +16,7 @@ export const Question = (props) => {
         value={desc}
         onChange={(e) => {
           setDesc(e.target.value);
+          props.handleChange(e);
         }}
       />
     </div>
