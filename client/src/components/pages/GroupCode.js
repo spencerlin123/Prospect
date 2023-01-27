@@ -1,14 +1,16 @@
 import "./GroupCode.css";
 import React, { useState, useEffect } from "react";
 import { get, post } from "../../utilities";
+import { navigate } from "@reach/router";
 
 function GroupCode(props) {
   const [code, setCode] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/editGroup", { group_code: code }).then((res) => console.log(res)).catch((res) => alert("You've already joined this group!"));
-
-  };
+    post("/api/editGroup", { group_code: code }).then((res) => 
+      console.log(res)).catch((res) => alert("You've already joined this group!"));
+      navigate("/group-questions/" + code)
+    };
 
 
   return (

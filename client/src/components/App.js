@@ -19,6 +19,7 @@ import CreateNewGroups from "./pages/CreateNewGroupsPage.js";
 import GroupCode from "./pages/GroupCode.js";
 import ProspectsPage from "./pages/ProspectsPage.js";
 import IndividualProspectPage from "./pages/IndividualProspectPage.js";
+import GroupQuestionsPage from "./pages/GroupQuestions.js";
 
 /**
  * Define the "App" component
@@ -70,10 +71,7 @@ const App = () => {
         <CreateNewGroups path="/createnewgroup" userId={userId} />
         <GroupCode path="/entercode" userId={userId} />
         <ProspectsPage path="/created-groups/:group_code" userId={userId} />
-        {/* <IndividualProspectPage path="/:individual" /> */}
-        {/* {titles.map((title) => (
-          <Prospects path={"/created-groups/" + title} userId = {userId}/>
-        ))} */}
+        <GroupQuestionsPage path="/group-questions/:code" userId={userId} />
       </Router>
     </>
   );
