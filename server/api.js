@@ -59,7 +59,7 @@ router.get("/joinedgroups", (req, res) => {
 });
 
 router.get("/users", (req, res) => {
-  User.find({}).then((users) => {
+  User.find({googleid: req.group.user_id}).then((users) => {
     res.send(users);
   });
 });
@@ -108,6 +108,10 @@ router.post("/editGroup", async (req, res) => {
   // if ((group.user_id).includes(req.user.googleid)) {
   //   res.status(400).send('You have already joined this group!')
   // }
+});
+
+router.post("/deleteprospect", async (req, res) => {
+  User.deleteOne({ googleid: req.user.googleid });
 });
 
 // router.get("/tests", (req, res) => {

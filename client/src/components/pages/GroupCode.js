@@ -6,7 +6,7 @@ function GroupCode(props) {
   const [code, setCode] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/editGroup", { group_code: code }).then((res) => console.log(res)).catch((res) => console.log(JSON.stringify(res)));
+    post("/api/editGroup", { group_code: code }).then((res) => console.log(res)).catch((res) => alert("You've already joined this group!"));
   };
 
 
