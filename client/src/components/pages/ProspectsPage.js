@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ProspectsPage.css";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import { Profile } from "../modules/profile/Profile";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import { get } from "../../utilities";
@@ -15,6 +15,7 @@ function ProspectsPageG(props) {
   }, []);
 
   const [prospect, setProspect] = useState(null);
+  console.log(prospect);
 
   return prospect ? (
     <>
@@ -22,6 +23,9 @@ function ProspectsPageG(props) {
         <div className="gray-container">
           <img src={prospect.img_url} className="about-circleimage" />
           <div className="about-name">{prospect.name}</div>
+          <button className="Back-Button" onClick={() => location.reload()}>
+            BACK
+          </button>
         </div>
         <div className="IndividualPage-container">
           <div className="IndividualPage-header">ABOUT</div>
