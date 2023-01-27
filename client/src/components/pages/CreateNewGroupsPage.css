@@ -89,7 +89,7 @@
   font-weight: 1000;
 }
 
-input[type="file"]::file-selector-button {
+/* input[type="file"]::file-selector-button {
   border: 2px solid #000957;
   padding: 0.2em 0.4em;
   background-color: #000957;
@@ -97,9 +97,9 @@ input[type="file"]::file-selector-button {
   transition: 1s;
   font-family: "Lato";
   font-weight: 700;
-}
+} */
 
-input[type="file"]::-ms-browse:hover {
+/* input[type="file"]::-ms-browse:hover {
   background-color: #000957;
   border: 2px solid #000957;
   cursor: pointer;
@@ -115,7 +115,7 @@ input[type="file"]::file-selector-button:hover {
   background-color: #000957;
   border: 2px solid #eff1f1;
   cursor: pointer;
-}
+} */
 
 .CreateNewContainer-inputbox {
   display: flex;
@@ -131,4 +131,23 @@ input[type="file"]::file-selector-button:hover {
   height: 150px;
   width: 100%;
   background-color: white;
+}
+
+.CreateNewGroups-submit{
+  display: flex;
+  border: 2px solid #000957;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  margin: 15px;
+  font-weight: 1000;
+  font-family: "Lato";
+  background-color: white;
+}
+
+.CreatedNewGroups-submit:hover {
+  color: white;
+  background: #000957;
+  cursor: pointer;
 }

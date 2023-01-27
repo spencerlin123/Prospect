@@ -1,6 +1,6 @@
 import "./CreateNewGroupsPage.css";
 import React, { useState, useEffect } from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 import { Question } from "../modules/QuestionBox.js";
 // import "../modules/Questions.css"
 import { Button } from "../modules/AddQuestionButton.js";
@@ -52,13 +52,21 @@ function CreateNewGroupsPage(props) {
   //   }
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    post("/api/groups", {
-      title: desc1,
-      description: desc2,
-      img_url: selectedFile,
-      group_code: Math.floor(100000 + Math.random() * 900000),
-    }).then((res) => console.log(res));
+    if (desc1 !== "" && desc2 !== "" && selectedFile !== ""){
+      event.preventDefault();
+      post("/api/groups", {
+        title: desc1,
+        description: desc2,
+        img_url: selectedFile,
+        group_code: Math.floor(100000 + Math.random() * 900000),
+      }).then((res) => {
+        console.log(res); 
+        navigate("/created-groups")
+      });
+    }
+    else{
+      alert("Please fill in all the fields to submit your created group")
+    }
   };
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -135,12 +143,11 @@ function CreateNewGroupsPage(props) {
                 onClick={addComponent}
                 text="Add Question"
               />
-              <Link to="/created-groups">
-                {/* <div className="CreateNewGroups-container">SUBMIT</div> */}
-              </Link>
-              <button type="submit" className="GroupSubmit" value="Submit" onClick={handleSubmit}>
+             
+              <button type="submit" className="CreateNewGroups-submit" value="Submit" onClick={handleSubmit}>
                 SUBMIT
               </button>
+           
             </div>
           </div>
         ) : (

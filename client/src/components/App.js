@@ -71,9 +71,6 @@ const App = () => {
         <GroupCode path="/entercode" userId={userId} />
         <ProspectsPage path="/created-groups/:title" userId={userId} />
         <IndividualProspectPage path="/createded-groups/:title/:individual" />
-        {/* {titles.map((title) => (
-          <Prospects path={"/created-groups/" + title} userId = {userId}/>
-        ))} */}
       </Router>
     </>
   );
