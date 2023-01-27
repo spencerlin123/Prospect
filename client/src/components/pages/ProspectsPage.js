@@ -15,10 +15,19 @@ function ProspectsPageG(props) {
   }, []);
 
   const [prospect, setProspect] = useState(null);
-  console.log(prospect);
 
   return prospect ? (
-    <div className="ProspectsPage-header">ABOUT</div>
+    <>
+      <span className="Prospects-wholepage">
+        <div className="gray-container">
+          <img src={prospect.img_url} className="about-circleimage" />
+          <div className="about-name">{prospect.name}</div>
+        </div>
+        <div className="IndividualPage-container">
+          <div className="IndividualPage-header">ABOUT</div>
+        </div>
+      </span>
+    </>
   ) : (
     <>
       <div>
@@ -27,7 +36,7 @@ function ProspectsPageG(props) {
             <b className="ProspectsPage-header">PROSPECTS</b>
             <div className="ProspectsPage-container">
               {users.map((user_info) => (
-                <div onClick={() => setProspect(user_info._id)} className="ProspectsPage-profiles">
+                <div onClick={() => setProspect(user_info)} className="ProspectsPage-profiles">
                   <Profile img_url={user_info.img_url} name={user_info.name} title={props.title} />
                 </div>
               ))}

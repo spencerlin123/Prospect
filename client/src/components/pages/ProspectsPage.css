@@ -1,36 +1,90 @@
 .ProspectsPage-header {
-    display: flex;
-    height: 250px;
-    align-items: center;
-    justify-content: center;
-    color: #000957;
-    text-decoration: underline;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 1000;
-    margin-bottom: -75px;
-  }
-  
-  .ProspectsPage-container {
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-    color: #000957;
-    font-family: "Lato";
-    font-weight: 1000;
-    flex-wrap: wrap;
-  }
-  
-  .PropspectsPage-login {
-    display: flex;
-    height: 650px;
-    align-items: center;
-    justify-content: center;
-    color: #000957;
-    text-decoration: underline;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 1000;
-  }
+  display: flex;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+  margin-bottom: -75px;
+}
 
-  
+.ProspectsPage-container {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  color: #000957;
+  font-family: "Lato";
+  font-weight: 1000;
+  flex-wrap: wrap;
+}
+
+.PropspectsPage-login {
+  display: flex;
+  height: 650px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  /* text-decoration: underline; */
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+}
+
+.gray-container {
+  display: flex;
+  height: 100%;
+  width: 35%;
+  align-items: center;
+  padding-top: 175px;
+  color: #000957;
+  /* text-decoration: underline; */
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+  background-color: rgb(173, 173, 173);
+  /* position: fixed; */
+  z-index: -2;
+  flex-direction: column;
+  text-align: center;
+}
+
+.IndividualPage-header {
+  display: flex;
+  height: 250px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+  margin-bottom: -75px;
+}
+
+.Prospects-wholepage {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+}
+
+.IndividualPage-container {
+  width: 100%;
+  height: 100%;
+}
+
+.about-circleimage {
+  border-radius: 50%;
+  width: 55%;
+  margin-bottom: 24px;
+}
+
+.about-name {
+  font-family: "Lato";
+  font-size: 32px;
+  text-decoration: none;
+  font-weight: 1000;
+}
