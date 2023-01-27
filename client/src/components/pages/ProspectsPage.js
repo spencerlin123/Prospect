@@ -9,6 +9,7 @@ function ProspectsPageG(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     get("/api/users").then((userObjs) => {
+      console.log(userObjs);
       setUsers(userObjs);
     });
   }, []);

@@ -41,7 +41,11 @@ function CreateNewGroupsPage(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/groups", { title: desc1, description: desc2 }).then((res) => console.log(res));
+    post("/api/groups", {
+      title: desc1,
+      description: desc2,
+      group_code: Math.floor(100000 + Math.random() * 900000),
+    }).then((res) => console.log(res));
   };
 
   const [selectedFile, setSelectedFile] = useState(null);
@@ -122,7 +126,7 @@ function CreateNewGroupsPage(props) {
                 {/* <div className="CreateNewGroups-container">SUBMIT</div> */}
               </Link>
               <button type="submit" className="GroupSubmit" value="Submit" onClick={handleSubmit}>
-                test
+                SUBMIT
               </button>
             </div>
           </div>

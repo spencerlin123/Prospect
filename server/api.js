@@ -64,15 +64,16 @@ router.post("/groups", (req, res) => {
     prospects: 0,
     user_id: [],
     questions: req.body.questions,
-    group_code: req.body.creator_id,
+    group_code: req.body.group_code,
   });
   newGroup.save().then((group) => res.send(group));
 });
 
 router.post("/groups", async (req, res) => {
-  const group = await groups.findOne({ group_code: req.body.group_code });
+  const group = await Group.findOne({ group_code: req.body.group_code });
 
-  group.user_id.concat(req.user);
+  group.user_id.concat("5829340");
+  console.log("function called");
 
   await group.save();
 
