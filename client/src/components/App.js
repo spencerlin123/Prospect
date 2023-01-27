@@ -70,7 +70,10 @@ const App = () => {
         <CreateNewGroups path="/createnewgroup" userId={userId} />
         <GroupCode path="/entercode" userId={userId} />
         <ProspectsPage path="/created-groups/:title" userId={userId} />
-        <IndividualProspectPage path="/createded-groups/:title/:individual" />
+        {/* <IndividualProspectPage path="/:individual" /> */}
+        {/* {titles.map((title) => (
+          <Prospects path={"/created-groups/" + title} userId = {userId}/>
+        ))} */}
       </Router>
     </>
   );

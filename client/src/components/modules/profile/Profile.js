@@ -6,9 +6,9 @@ import { ProfileDesc } from "./ProfileDesc";
 
 export const Profile = (props) => {
   return (
-    <Link to={"/created-groups/" + props.title + "/" + props.name} className="Profile-container">
+    <div className="Profile-container">
       <ProfilePic className="Profile-pic" img_url={props.img_url} />
       <ProfileDesc className="Profile-desc" name={props.name} />
-    </Link>
+    </div>
   );
 };

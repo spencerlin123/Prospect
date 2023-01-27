@@ -12,7 +12,6 @@
   width: 347px;
   height: 191px;
   background-color: white;
-  margin-top: 16px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -36,13 +35,13 @@
   border-width: 2px;
 }
 
-.GroupCode-submit {
+.GroupSubmit {
   color: white;
   background-color: #000957;
   border: solid;
   border-color: #000957;
   width: 293px;
-  height: 64px;
+  height: 56px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -52,21 +51,12 @@
   margin-top: 16px;
 }
 
-.GroupCode-submit:hover {
+.GroupSubmit:hover {
   color: #000957;
   background-color: white;
   border: solid;
   border-color: #000957;
   border-width: 4px;
-  width: 293px;
-  height: 64px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  font-family: "Lato";
-  font-size: 30px;
-  font-weight: 700;
-  margin-top: 16px;
   cursor: pointer;
 }
 

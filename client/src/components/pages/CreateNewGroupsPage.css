@@ -25,6 +25,8 @@
   border: 0.5px solid grey;
   position: fixed;
   background: white;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .CreateNewGroups-container {
@@ -32,7 +34,7 @@
   border: 3px solid #000957;
   padding: 10px;
   margin: 15px;
-  position: fixed;
+  position: flex;
   bottom: 0;
   right: 0;
   color: #000957;
@@ -133,20 +135,25 @@ input[type="file"]::file-selector-button:hover {
   background-color: white;
 }
 
-.CreateNewGroups-submit{
+.CreateNewGroups-submit {
   display: flex;
-  border: 2px solid #000957;
-  position: fixed;
+  border: 3px solid #000957;
+  /* position: fixed;
   bottom: 0;
-  right: 0;
+  right: 0; */
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   margin: 15px;
   font-weight: 1000;
   font-family: "Lato";
   background-color: white;
+  font-size: 20px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
-.CreatedNewGroups-submit:hover {
+.CreateNewGroups-submit:hover {
   color: white;
   background: #000957;
   cursor: pointer;

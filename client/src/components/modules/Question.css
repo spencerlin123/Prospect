@@ -1,5 +1,5 @@
 .AddButton {
-  font-size: 15px;
+  font-size: 20px;
   font-family: "Lato";
   text-align: center;
   background-color: #000957;
@@ -9,14 +9,16 @@
   font-weight: 700;
   padding-left: 40px;
   padding-right: 40px;
+  border: solid;
+  border-width: 3px;
+  border-color: #000957;
 }
 
 .AddButton:hover {
   border: solid;
-  border-width: 4px;
+  border-width: 6px;
   border-color: #000957;
   cursor: pointer;
-  font-size: 17px;
 }
 
 .Component {

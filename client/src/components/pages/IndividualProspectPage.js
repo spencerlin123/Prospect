@@ -11,7 +11,7 @@ function IndividualProspectPage(props) {
       <div>
         {props.userId ? (
           <div>
-            <b className="ProspectsPage-header">PROSPECTS</b>
+            <b className="ProspectsPage-header">PROSPECT</b>
           </div>
         ) : (
           <div>
