@@ -44,6 +44,12 @@ function ProspectsPageG(props) {
                   <Profile img_url={user_info.img_url} name={user_info.name} title={props.title} />
                 </div>
               ))}
+              <div className="Pemptyspace" />
+              <div className="Prospects-line">
+                <div>
+                  <div className="group-code-share">GROUP CODE: {props.group_code}</div>
+                </div>
+              </div>
             </div>
           </div>
         ) : (

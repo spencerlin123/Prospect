@@ -119,3 +119,34 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+.group-code-share {
+  font-family: "Lato";
+  font-weight: 1000;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #000957;
+  padding: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.Pemptyspace {
+  height: 50px;
+  width: 100%;
+  background-color: white;
+}
+
+.Prospects-line {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  bottom: 0px;
+  border: 0.5px solid grey;
+  position: fixed;
+  background: white;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 32px;
+}
