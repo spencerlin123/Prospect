@@ -69,7 +69,7 @@ const App = () => {
         <CreatedGroups path="/created-groups" userId={userId} />
         <CreateNewGroups path="/createnewgroup" userId={userId} />
         <GroupCode path="/entercode" userId={userId} />
-        <ProspectsPage path="/created-groups/:title" userId={userId} />
+        <ProspectsPage path="/created-groups/:group_code" userId={userId} />
         {/* <IndividualProspectPage path="/:individual" /> */}
         {/* {titles.map((title) => (
           <Prospects path={"/created-groups/" + title} userId = {userId}/>

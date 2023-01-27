@@ -26,6 +26,7 @@ function CreatedGroupsPage(props) {
                   title={group_info.title}
                   description={group_info.description}
                   prospects={group_info.prospects}
+                  group_code = {group_info.group_code}
                 />
               </div>
             ))}

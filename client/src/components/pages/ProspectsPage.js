@@ -4,11 +4,12 @@ import { Link, navigate } from "@reach/router";
 import { Profile } from "../modules/profile/Profile";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import { get } from "../../utilities";
+import { useLocation } from "@reach/router"
 
-function ProspectsPageG(props) {
+function ProspectsPage(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    get("/api/users").then((userObjs) => {
+    get("/api/users", {group_code: props.group_code}).then((userObjs) => {
       console.log(userObjs);
       setUsers(userObjs);
     });
@@ -16,6 +17,8 @@ function ProspectsPageG(props) {
 
   const [prospect, setProspect] = useState(null);
   console.log(prospect);
+  console.log(useLocation());
+  console.log(props.group_code);
 
   return prospect ? (
     <>
@@ -62,4 +65,4 @@ function ProspectsPageG(props) {
   );
 }
 
-export default ProspectsPageG;
+export default ProspectsPage;

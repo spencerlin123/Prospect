@@ -45,13 +45,13 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 router.get("/createdgroups", (req, res) => {
-  Group.find({creator_id: req.user.googleid}).then((groups) => {
+  Group.find({ creator_id: req.user.googleid }).then((groups) => {
     res.send(groups);
   });
 });
 
 router.get("/joinedgroups", (req, res) => {
-  Group.find({user_id: req.user.googleid}).then((groups) => {
+  Group.find({ user_id: req.user.googleid }).then((groups) => {
     res.send(groups);
 
     // const group = await Group.findOne({ group_code: req.body.group_code });
@@ -59,7 +59,7 @@ router.get("/joinedgroups", (req, res) => {
 });
 
 router.get("/users", (req, res) => {
-  User.find({googleid: req.group.user_id}).then((users) => {
+  User.find({ joined_groups: req.query.group_code }).then((users) => {
     res.send(users);
   });
 });
@@ -82,8 +82,8 @@ router.post("/groups", (req, res) => {
   } else {
     res.send({
       succes: false,
-      reason: "not logged in"
-    })
+      reason: "not logged in",
+    });
   }
 });
 
@@ -100,7 +100,14 @@ router.post("/editGroup", async (req, res) => {
     console.log(group);
 
     await group.save();
-    res.send({ success: true });
+
+    User.findOne({ googleid: req.user.googleid }).then((user) => {
+      console.log("HELLO FOUND THING");
+      console.log(user);
+      user.joined_groups = [...user.joined_groups, req.body.group_code];
+      user.save();
+      res.send({ success: true });
+    });
   } else {
     res.status(400).send({ error: "You have already joined this group!" });
   }
@@ -112,6 +119,12 @@ router.post("/editGroup", async (req, res) => {
 
 router.post("/deleteprospect", async (req, res) => {
   User.deleteOne({ googleid: req.user.googleid });
+});
+
+router.get("/test", (req, res) => {
+  User.find({}).then((users) => {
+    res.send(users);
+  });
 });
 
 // router.get("/tests", (req, res) => {
