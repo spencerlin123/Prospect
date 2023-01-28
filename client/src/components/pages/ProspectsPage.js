@@ -4,17 +4,23 @@ import { Link, navigate } from "@reach/router";
 import { Profile } from "../modules/profile/Profile";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import { get } from "../../utilities";
-import { useLocation } from "@reach/router"
+import { useLocation } from "@reach/router";
 
 function ProspectsPage(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    get("/api/users", {group_code: props.group_code}).then((userObjs) => {
+    get("/api/users", { group_code: props.group_code }).then((userObjs) => {
       console.log(userObjs);
       setUsers(userObjs);
     });
   }, []);
 
+  const [answers, setAnswers] = useState([]);
+  useEffect(() => {
+    get("/api/get-answers", { group_code: props.group_code, googleid: props.googleid }).then(
+      answerObjs
+    );
+  });
   const [prospect, setProspect] = useState(null);
   console.log(prospect);
   console.log(useLocation());

@@ -130,13 +130,14 @@ router.get("/test", (req, res) => {
 
 router.get("/group-questions", (req, res) => {
   Group.findOne({ group_code: req.query.group_code }).then((group) => {
-    const output = [];
-    group.questions.forEach((question) => {
-      if (question !== "") {
-        output.push(question);
-      }
-    });
-    res.send(output);
+    res.send(group);
+    // const output = [];
+    // group.questions.forEach((question) => {
+    //   if (question !== "") {
+    //     output.push(question);
+    //   }
+    // });
+    // res.send(output);
   });
 });
 

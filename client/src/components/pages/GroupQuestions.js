@@ -5,13 +5,16 @@ import DisplayQuestions from "../modules/DisplayQuestions";
 
 function GroupQuestionsPage(props) {
   const [questions, setQuestions] = useState([]);
+  const [title, setTitle] = useState();
   useEffect(() => {
     get("/api/group-questions", {
       group_code: props.code,
-    }).then((questions) => {
-      setQuestions(questions);
+    }).then((group) => {
+      setQuestions(group.questions.filter((q) => q != ""));
+      setTitle(group.title);
+      console.log(group);
       console.log(props.code);
-      console.log(questions);
+      console.log(group.questions);
       console.log(props.googleid);
     });
   }, []);
@@ -19,7 +22,7 @@ function GroupQuestionsPage(props) {
     <>
       <div className="GroupQuestions-emptyspace" />
       <div className="GroupQuestions-page">
-        <div className="grayinfo-container">{props.title}</div>
+        <div className="grayinfo-container">{title}</div>
         <div className="Questions-container">
           <div className="GroupQuestions-header">QUESTIONS</div>
           <div className="GroupQuestions-body">
