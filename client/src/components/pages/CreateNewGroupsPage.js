@@ -54,20 +54,20 @@ function CreateNewGroupsPage(props) {
   //   }
 
   const handleSubmit = (event) => {
-    if (desc1 !== "" && desc2 !== "" && selectedFile !== ""){
+    if (desc1 !== "" && desc2 !== "" && selectedFile !== "") {
       event.preventDefault();
       post("/api/groups", {
         title: desc1,
         description: desc2,
+        questions: questions,
         img_url: selectedFile,
         group_code: Math.floor(100000 + Math.random() * 900000),
       }).then((res) => {
-        console.log(res); 
-        navigate("/created-groups")
+        console.log(res);
+        navigate("/created-groups");
       });
-    }
-    else{
-      alert("Please fill in all the fields to submit your created group")
+    } else {
+      alert("Please fill in all the fields to submit your created group");
     }
   };
 
@@ -154,11 +154,15 @@ function CreateNewGroupsPage(props) {
                 onClick={addComponent}
                 text="Add Question"
               />
-             
-              <button type="submit" className="CreateNewGroups-submit" value="Submit" onClick={handleSubmit}>
+
+              <button
+                type="submit"
+                className="CreateNewGroups-submit"
+                value="Submit"
+                onClick={handleSubmit}
+              >
                 SUBMIT
               </button>
-           
             </div>
           </div>
         ) : (

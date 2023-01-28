@@ -9,7 +9,7 @@ import { useLocation } from "@reach/router";
 function ProspectsPage(props) {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    get("/api/users", { group_code: props.group_code }).then((userObjs) => {
+    get("/api/users", { group_code: props.group_code, googleid: prospect.googleid }).then((userObjs) => {
       console.log(userObjs);
       setUsers(userObjs);
     });

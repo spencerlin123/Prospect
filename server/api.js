@@ -125,7 +125,13 @@ router.post("/deleteprospect", async (req, res) => {
     const temp2 = group.user_id = group.user_id.slice(ind + 1)
     group.user_id = temp1.concat(temp2)
     group.save()
+
+  User.findOne({ googleid: req.body.googleid }).then((user)=> {
+
+  })
   });
+
+
 
 
 });
