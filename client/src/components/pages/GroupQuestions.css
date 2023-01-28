@@ -1,0 +1,77 @@
+.GroupQuestions-emptyspace {
+  height: 75px;
+  width: 100%;
+}
+
+.GroupQuestions-header {
+}
+
+.grayinfo-container {
+  height: 100%;
+  width: 37%;
+  background-color: rgb(163, 163, 163);
+}
+
+.GroupQuestions-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.GroupQuestions-header {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  color: #000957;
+  text-decoration: underline;
+  font-size: 30px;
+  font-family: "Lato";
+  font-weight: 1000;
+  margin-bottom: -75px;
+}
+
+.Questions-container {
+  width: 100%;
+  height: 100%;
+}
+
+.GroupQuestions-body {
+  margin: 65px;
+  margin-top: 80px;
+}
+
+.Questions-line {
+  height: 75px;
+  width: 100%;
+  display: flex;
+  bottom: 0px;
+  border-top: 0.5px solid grey;
+  position: fixed;
+  background: white;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Questions-submit {
+  display: flex;
+  border: 3px solid #000957;
+  padding: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  color: #000957;
+  font-family: "Lato";
+  font-weight: 1000;
+  background-color: transparent;
+  font-size: 17px;
+}
+
+.Questions-submit:hover {
+  background-color: #000957;
+  color: white;
+  cursor: pointer;
+}

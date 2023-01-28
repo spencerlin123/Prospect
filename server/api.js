@@ -12,7 +12,7 @@ const express = require("express");
 // import models so we can interact with the database
 const User = require("./models/user");
 const Group = require("./models/group");
-const Answer = require("./models/answer")
+const Answer = require("./models/answer");
 
 // import authentication library
 const auth = require("./auth");
@@ -145,15 +145,16 @@ router.get("/test", (req, res) => {
 });
 
 router.get("/group-questions", (req, res) => {
-  Group.findOne({group_code: req.query.group_code}).then((group) => {
-    const output = [];
-    group.questions.forEach(question => {
-      if (question !== ""){
-        output.push(question)
-      }
-    });
-    res.send(output);
-  })
+  Group.findOne({ group_code: req.query.group_code }).then((group) => {
+    res.send(group);
+    // const output = [];
+    // group.questions.forEach((question) => {
+    //   if (question !== "") {
+    //     output.push(question);
+    //   }
+    // });
+    // res.send(output);
+  });
 });
 
 router.post("/answers", (req, res) => {
@@ -161,10 +162,10 @@ router.post("/answers", (req, res) => {
     googleid: req.user.googleid,
     group_code: req.body.group_code,
     question: req.body.question,
-    answer: req.body.answer
+    answer: req.body.answer,
   });
   newAnswer.save().then((answer) => res.send(answer));
-})
+});
 
 // router.get("/tests", (req, res) => {
 // // create 3 group documents here
