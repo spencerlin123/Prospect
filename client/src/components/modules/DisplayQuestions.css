@@ -1,9 +1,27 @@
-.GroupQuestions-question{
-    display: flex;
-    align-items: center;
-    color: black;
-    font-size: 30px;
-    font-family: "Lato";
-    font-weight: 800;
-    margin-bottom: 10px;
+.GroupQuestions-question {
+  display: flex;
+  align-items: center;
+  color: #000957;
+  font-size: 25px;
+  font-family: "Lato";
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.GroupQuestions-input {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000957;
+  font-size: 15px;
+  font-family: "Lato";
+  margin-bottom: 32px;
+  margin-top: 16px;
+  border: solid;
+  border-width: 1px;
+  border-color: #000957;
+  padding: 5px;
+  padding-left: 32px;
+  padding-right: 32px;
+  width: 100%;
 }
