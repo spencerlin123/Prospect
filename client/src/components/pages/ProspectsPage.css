@@ -108,6 +108,24 @@
   justify-content: center;
 }
 
+.Button-tes {
+  z-index: 1000;
+  font-family: "Lato";
+  font-weight: 1000;
+  background: transparent;
+  color: #000957;
+  display: flex;
+  border: 3px solid #000957;
+  font-size: 20px;
+  padding: 10px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 200px;
+  width: 75%;
+  align-items: center;
+  justify-content: center;
+}
+
 .Back-Button:hover {
   z-index: 1000;
   font-family: "Lato";

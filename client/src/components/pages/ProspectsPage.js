@@ -3,7 +3,7 @@ import "./ProspectsPage.css";
 import { Link, navigate } from "@reach/router";
 import { Profile } from "../modules/profile/Profile";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
-import { get } from "../../utilities";
+import { get, post } from "../../utilities";
 import { useLocation } from "@reach/router"
 
 function ProspectsPage(props) {
@@ -15,6 +15,11 @@ function ProspectsPage(props) {
     });
   }, []);
 
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log(prospect.googleid)
+      post("/api/deleteprospect", {googleid: prospect.googleid, group_code: props.group_code})
+  };
   const [prospect, setProspect] = useState(null);
   console.log(prospect);
   console.log(useLocation());
@@ -24,8 +29,10 @@ function ProspectsPage(props) {
     <>
       <span className="Prospects-wholepage">
         <div className="gray-container">
+        
           <img src={prospect.img_url} className="about-circleimage" />
           <div className="about-name">{prospect.name}</div>
+          <button onClick = {handleSubmit}>Button</button>
           <button className="Back-Button" onClick={() => location.reload()}>
             BACK
           </button>
