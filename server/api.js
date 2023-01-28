@@ -119,8 +119,24 @@ router.post("/editGroup", async (req, res) => {
 });
 
 router.post("/deleteprospect", async (req, res) => {
-  User.deleteOne({ googleid: req.user.googleid });
+  Group.findOne({ group_code: req.body.group_code }).then((group) => {
+    const ind = group.user_id.findIndex(element => {return element == req.body.googleid})
+    const temp1 = group.user_id.slice(0, ind)
+    const temp2 = group.user_id = group.user_id.slice(ind + 1)
+    group.user_id = temp1.concat(temp2)
+    group.save()
+  });
+
+
 });
+
+// router.post("/leavegroup", async (req, res) => {
+//   User.deleteOne({ googleid: req.user.googleid });
+// });
+
+// router.post("/deletegroup", async (req, res) => {
+//   User.deleteOne({ : req.user.googleid });
+// });
 
 router.get("/test", (req, res) => {
   User.find({}).then((users) => {
