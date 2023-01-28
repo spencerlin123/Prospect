@@ -6,12 +6,16 @@ import DisplayQuestions from "../modules/DisplayQuestions";
 function GroupQuestionsPage(props) {
   const [questions, setQuestions] = useState([]);
   const [title, setTitle] = useState();
+  const [img_url, setImg_url] = useState();
+  const [description, setDescription] = useState();
   useEffect(() => {
     get("/api/group-questions", {
       group_code: props.code,
     }).then((group) => {
       setQuestions(group.questions.filter((q) => q != ""));
       setTitle(group.title);
+      setImg_url(group.img_url);
+      setDescription(group.description);
       console.log(group);
       console.log(props.code);
       console.log(group.questions);
@@ -22,7 +26,11 @@ function GroupQuestionsPage(props) {
     <>
       <div className="GroupQuestions-emptyspace" />
       <div className="GroupQuestions-page">
-        <div className="grayinfo-container">{title}</div>
+        <div className="grayinfo-container">
+          <img src={img_url} className="GroupQuestions-img" />
+          <div className="GroupQuestions-title">{title}</div>
+          <div className="GroupQuestions-description">{description}</div>
+        </div>
         <div className="Questions-container">
           <div className="GroupQuestions-header">QUESTIONS</div>
           <div className="GroupQuestions-body">

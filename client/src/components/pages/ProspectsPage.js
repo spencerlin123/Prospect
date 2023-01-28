@@ -15,12 +15,6 @@ function ProspectsPage(props) {
     });
   }, []);
 
-  const [answers, setAnswers] = useState([]);
-  useEffect(() => {
-    get("/api/get-answers", { group_code: props.group_code, googleid: props.googleid }).then(
-      answerObjs
-    );
-  });
   const [prospect, setProspect] = useState(null);
   console.log(prospect);
   console.log(useLocation());
