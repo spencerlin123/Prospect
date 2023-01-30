@@ -20,6 +20,7 @@
   margin-left: 0px;
   font-family: "Lato";
   font-weight: 900;
+  text-align: center;
 }
 
 .hero-container > p {
@@ -35,6 +36,7 @@
   margin-top: 32px;
   flex-direction: row;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .hero-btns .btn {
@@ -49,6 +51,7 @@
   .hero-container > h1 {
     font-size: 70px;
     margin-top: -150px;
+    text-align: center;
   }
 }
 
@@ -56,10 +59,12 @@
   .hero-container > h1 {
     font-size: 50px;
     margin-top: -100px;
+    text-align: center;
   }
 
   .hero-container > p {
     font-size: 30px;
+    text-align: center;
   }
 
   .btn-mobile {
@@ -67,14 +72,46 @@
     text-decoration: none;
   }
 
-  .btn {
+  .hero-btns {
     width: 100%;
+  }
+
+  .hero-items {
+    margin: 10px;
+  }
+
+  .hero-links-text1 {
+    color: white;
+    text-decoration: none;
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 15px;
+    padding: 12px;
+    border: solid;
+    border-color: #000957;
+    border-width: 4px;
+    background-color: #000957;
+    margin: 8px;
+  }
+
+  .hero-links-text2 {
+    font-family: "Lato";
+    font-weight: 700;
+    color: #000957;
+    font-size: 15px;
+    border: solid;
+    border-color: #000957;
+    border-width: 4px;
+    padding: 12px;
   }
 }
 
 .hero-items {
   justify-content: center;
   margin-top: 24px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-links-text1 {
@@ -94,7 +131,7 @@
 }
 
 .hero-links-text1:hover {
-  color: #000957;
+  color: white;
   text-decoration: none;
   font-family: "Lato";
   font-weight: 700;
@@ -102,8 +139,8 @@
   padding: 12px;
   border: solid;
   border-color: #000957;
-  border-width: 4px;
-  background-color: white;
+  border-width: 8px;
+  background-color: #000957;
   margin: 8px;
   padding-left: 40px;
   padding-right: 40px;

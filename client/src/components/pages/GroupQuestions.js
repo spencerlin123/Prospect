@@ -41,6 +41,7 @@ function GroupQuestionsPage(props) {
     <>
       <div className="GroupQuestions-emptyspace" />
       <div className="GroupQuestions-page">
+        <div className="left-empty-space" />
         <div className="grayinfo-container">
           <img src={img_url} className="GroupQuestions-img" />
           <div className="GroupQuestions-title">{title}</div>

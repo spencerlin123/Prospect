@@ -44,7 +44,9 @@ function ProspectsPage(props) {
         <div className="gray-container">
           <img src={prospect.img_url} className="about-circleimage" />
           <div className="about-name">{prospect.name}</div>
-          <button onClick={handleSubmit1}>Button</button>
+          <button className="delete-button" onClick={handleSubmit1}>
+            DELETE
+          </button>
           <button className="Back-Button" onClick={() => location.reload()}>
             BACK
           </button>
@@ -68,8 +70,10 @@ function ProspectsPage(props) {
               ))}
               <div className="Pemptyspace" />
               <div className="Prospects-line">
-                <div>
-                  <button onClick={handleSubmit2}>Button</button>
+                <div className="button-fix">
+                  <button className="group-delete" onClick={handleSubmit2}>
+                    DELETE
+                  </button>
                   <div className="group-code-share">GROUP CODE: {props.group_code}</div>
                 </div>
               </div>

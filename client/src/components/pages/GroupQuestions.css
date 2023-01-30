@@ -5,7 +5,16 @@
 
 .grayinfo-container {
   height: 100%;
-  width: 37%;
+  width: 35%;
+  background-color: rgb(208, 208, 208);
+  text-align: center;
+  padding-top: 75px;
+  position: fixed;
+}
+
+.left-empty-space {
+  height: 100%;
+  width: 53%;
   background-color: rgb(208, 208, 208);
   text-align: center;
   padding-top: 75px;
