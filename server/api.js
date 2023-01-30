@@ -77,8 +77,6 @@ router.post("/groups", (req, res) => {
       group_code: req.body.group_code,
       creator_id: req.user.googleid,
     });
-    // console.log(req.user)
-    // console.log(newGroup)
     newGroup.save().then((group) => res.send(group));
   } else {
     res.send({
@@ -89,13 +87,8 @@ router.post("/groups", (req, res) => {
 });
 
 router.post("/editGroup", async (req, res) => {
-  // console.log(req);
   const group = await Group.findOne({ group_code: req.body.group_code });
   if (!group.user_id.includes(req.user.googleid)) {
-    console.log(group);
-    console.log(req.user.googleid);
-
-    // group.user_id = group.user_id.concat(req.user.googleid);
     group.user_id = [...group.user_id, req.user.googleid];
     group.prospects = group.user_id.length;
     console.log(group);
@@ -179,24 +172,23 @@ router.get("/test", (req, res) => {
 router.get("/group-questions", (req, res) => {
   Group.findOne({ group_code: req.query.group_code }).then((group) => {
     res.send(group);
-    // const output = [];
-    // group.questions.forEach((question) => {
-    //   if (question !== "") {
-    //     output.push(question);
-    //   }
-    // });
-    // res.send(output);
   });
 });
 
 router.post("/answers", (req, res) => {
-  const newAnswer = new Answer({
-    googleid: req.user.googleid,
-    group_code: req.body.group_code,
-    question: req.body.question,
-    answer: req.body.answer,
-  });
-  newAnswer.save().then((answer) => res.send(answer));
+  console.log(req.body.questions.length)
+  console.log(req.body.answers.length)
+  for (let i = 0; i < req.body.questions.length; i++){
+    const newAnswer = new Answer({
+      googleid: req.user.googleid,
+      group_code: req.body.group_code,
+      question: req.body.questions[i],
+      answer: req.body.answers[i],
+    });
+    console.log(newAnswer);
+    newAnswer.save();
+    // newAnswer.save().then((answer) => res.send(answer));
+  }
 });
 
 // router.get("/tests", (req, res) => {
