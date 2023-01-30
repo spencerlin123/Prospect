@@ -3,15 +3,12 @@
   width: 100%;
 }
 
-.GroupQuestions-header {
-}
-
 .grayinfo-container {
   height: 100%;
   width: 37%;
-  background-color: rgb(163, 163, 163);
+  background-color: rgb(208, 208, 208);
   text-align: center;
-  padding-top: 125px;
+  padding-top: 75px;
 }
 
 .GroupQuestions-page {
@@ -82,4 +79,20 @@
   object-fit: cover;
   width: 225px;
   height: 225px;
+}
+
+.GroupQuestions-title {
+  margin-top: 16px;
+  color: #000957;
+  font-family: "Lato";
+  font-weight: 1000;
+  font-size: 30px;
+}
+
+.GroupQuestions-description {
+  margin-top: 16px;
+  color: rgb(59, 59, 59);
+  font-family: "Lato";
+  font-weight: 1000;
+  font-size: 15px;
 }
