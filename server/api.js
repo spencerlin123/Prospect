@@ -120,29 +120,55 @@ router.post("/editGroup", async (req, res) => {
 
 router.post("/deleteprospect", async (req, res) => {
   Group.findOne({ group_code: req.body.group_code }).then((group) => {
-    const ind = group.user_id.findIndex(element => {return element == req.body.googleid})
-    const temp1 = group.user_id.slice(0, ind)
-    const temp2 = group.user_id = group.user_id.slice(ind + 1)
-    group.user_id = temp1.concat(temp2)
-    group.save()
+    const ind = group.user_id.findIndex((element) => {
+      return element == req.body.googleid;
+    });
+    const temp1 = group.user_id.slice(0, ind);
+    const temp2 = group.user_id.slice(ind + 1);
+    group.user_id = temp1.concat(temp2);
+    group.save();
 
-  User.findOne({ googleid: req.body.googleid }).then((user)=> {
-
-  })
+    User.findOne({ googleid: req.body.googleid }).then((user) => {
+      const ind = user.joined_groups.findIndex((element) => {
+        return element == req.body.group_code;
+      });
+      const temp1 = user.joined_groups.slice(0, ind);
+      const temp2 = user.joined_groups.slice(ind + 1);
+      user.joined_groups = temp1.concat(temp2);
+      user.save();
+    });
   });
-
-
-
-
 });
 
-// router.post("/leavegroup", async (req, res) => {
-//   User.deleteOne({ googleid: req.user.googleid });
-// });
+router.post("/leavegroup", async (req, res) => {
+  Group.findOne({ group_code: req.body.group_code }).then((group) => {
+    const ind = group.user_id.findIndex((element) => {
+      return element == req.body.googleid;
+    });
+    const temp1 = group.user_id.slice(0, ind);
+    const temp2 = group.user_id.slice(ind + 1);
+    group.user_id = temp1.concat(temp2);
+    group.save();
 
-// router.post("/deletegroup", async (req, res) => {
-//   User.deleteOne({ : req.user.googleid });
-// });
+    User.findOne({ googleid: req.body.googleid }).then((user) => {
+      const ind = user.joined_groups.findIndex((element) => {
+        return element == req.body.group_code;
+      });
+      const temp1 = user.joined_groups.slice(0, ind);
+      const temp2 = user.joined_groups.slice(ind + 1);
+      user.joined_groups = temp1.concat(temp2);
+      user.save();
+    });
+  });
+});
+
+router.post("/deletegroup", async (req, res) => {
+  console.log("delete group");
+  Group.deleteOne({ group_code: req.body.group_code }).then((e) => {
+    console.log(e);
+    console.log("finished deleting");
+  });
+});
 
 router.get("/test", (req, res) => {
   User.find({}).then((users) => {
