@@ -45,7 +45,7 @@ function ProspectsPage(props) {
           <img src={prospect.img_url} className="about-circleimage" />
           <div className="about-name">{prospect.name}</div>
           <button className="delete-button" onClick={handleSubmit1}>
-            DELETE PROSPECT
+            REMOVE
           </button>
           <button className="Back-Button" onClick={() => location.reload()}>
             BACK
