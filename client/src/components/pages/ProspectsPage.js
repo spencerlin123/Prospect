@@ -28,12 +28,14 @@ function ProspectsPage(props) {
     event.preventDefault();
     console.log(prospect.googleid);
     post("/api/deleteprospect", { googleid: prospect.googleid, group_code: props.group_code });
+    location.reload();
   };
 
   const handleSubmit2 = (event) => {
     event.preventDefault();
     console.log("deleting");
     post("/api/deletegroup", { group_code: props.group_code });
+    navigate("/created-groups");
   };
 
   const [prospect, setProspect] = useState(null);

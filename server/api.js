@@ -88,7 +88,7 @@ router.post("/groups", (req, res) => {
     newGroup.save().then((group) => res.send(group));
   } else {
     res.send({
-      succes: false,
+      success: false,
       reason: "not logged in",
     });
   }
@@ -120,6 +120,7 @@ router.post("/editGroup", async (req, res) => {
 });
 
 router.post("/deleteprospect", async (req, res) => {
+
   Group.findOne({ group_code: req.body.group_code }).then((group) => {
     const ind = group.user_id.findIndex((element) => {
       return element == req.body.googleid;
@@ -127,6 +128,7 @@ router.post("/deleteprospect", async (req, res) => {
     const temp1 = group.user_id.slice(0, ind);
     const temp2 = group.user_id.slice(ind + 1);
     group.user_id = temp1.concat(temp2);
+    group.prospects = group.user_id.length;
     group.save();
 
     User.findOne({ googleid: req.body.googleid }).then((user) => {
@@ -144,22 +146,23 @@ router.post("/deleteprospect", async (req, res) => {
 router.post("/leavegroup", async (req, res) => {
   Group.findOne({ group_code: req.body.group_code }).then((group) => {
     const ind = group.user_id.findIndex((element) => {
-      return element == req.body.googleid;
+      return element == req.user.googleid;
     });
     const temp1 = group.user_id.slice(0, ind);
     const temp2 = group.user_id.slice(ind + 1);
     group.user_id = temp1.concat(temp2);
+    console.log(group.user_id)
     group.save();
-
-    User.findOne({ googleid: req.body.googleid }).then((user) => {
-      const ind = user.joined_groups.findIndex((element) => {
-        return element == req.body.group_code;
-      });
-      const temp1 = user.joined_groups.slice(0, ind);
-      const temp2 = user.joined_groups.slice(ind + 1);
-      user.joined_groups = temp1.concat(temp2);
-      user.save();
+  console.log(group)
+  User.findOne({ googleid: req.user.googleid }).then((user) => {
+    const ind = user.joined_groups.findIndex((element) => {
+      return element == req.body.group_code;
     });
+    const temp1 = user.joined_groups.slice(0, ind);
+    const temp2 = user.joined_groups.slice(ind + 1);
+    user.joined_groups = temp1.concat(temp2);
+    user.save();
+  });
   });
 });
 
@@ -184,9 +187,9 @@ router.get("/group-questions", (req, res) => {
 });
 
 router.post("/answers", (req, res) => {
-  console.log(req.body.questions.length)
-  console.log(req.body.answers.length)
-  for (let i = 0; i < req.body.questions.length; i++){
+  console.log(req.body.questions.length);
+  console.log(req.body.answers.length);
+  for (let i = 0; i < req.body.questions.length; i++) {
     const newAnswer = new Answer({
       googleid: req.user.googleid,
       group_code: req.body.group_code,
