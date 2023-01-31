@@ -80,7 +80,7 @@ router.post("/groups", (req, res) => {
     newGroup.save().then((group) => res.send(group));
   } else {
     res.send({
-      succes: false,
+      success: false,
       reason: "not logged in",
     });
   }
@@ -179,9 +179,9 @@ router.get("/group-questions", (req, res) => {
 });
 
 router.post("/answers", (req, res) => {
-  console.log(req.body.questions.length)
-  console.log(req.body.answers.length)
-  for (let i = 0; i < req.body.questions.length; i++){
+  console.log(req.body.questions.length);
+  console.log(req.body.answers.length);
+  for (let i = 0; i < req.body.questions.length; i++) {
     const newAnswer = new Answer({
       googleid: req.user.googleid,
       group_code: req.body.group_code,
