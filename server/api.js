@@ -22,6 +22,7 @@ const router = express.Router();
 
 //initialize socket
 const socketManager = require("./server-socket");
+const { Router } = require("express");
 
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
@@ -55,7 +56,6 @@ router.get("/joinedgroups", (req, res) => {
   Group.find({ user_id: req.user.googleid }).then((groups) => {
     res.send(groups);
 
-    // const group = await Group.findOne({ group_code: req.body.group_code });
   });
 });
 
@@ -64,6 +64,14 @@ router.get("/users", (req, res) => {
     res.send(users);
   });
 });
+
+router.get("/get-answers", (req, res) => {
+  console.log( {group_code: req.query.group_code, googleid: req.user.googleid });
+  Answer.find({ group_code: req.query.group_code, googleid: req.user.googleid }).then((document) => {
+    console.log(document);
+    res.send(document);
+  })
+})
 
 router.post("/groups", (req, res) => {
   if (req.user) {

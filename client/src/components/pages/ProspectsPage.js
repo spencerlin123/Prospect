@@ -8,10 +8,19 @@ import { useLocation } from "@reach/router";
 
 function ProspectsPage(props) {
   const [users, setUsers] = useState([]);
+  const [answers, setAnswers] = useState([]);
+
   useEffect(() => {
     get("/api/users", { group_code: props.group_code }).then((userObjs) => {
       console.log(userObjs);
       setUsers(userObjs);
+    });
+  }, []);
+
+  useEffect(() => {
+    get("/api/get-answers", { group_code: props.group_code }).then((answerObjs) => {
+      console.log(answerObjs);
+      setAnswers(answerObjs);
     });
   }, []);
 
@@ -23,16 +32,10 @@ function ProspectsPage(props) {
 
   const handleSubmit2 = (event) => {
     event.preventDefault();
-    // console.log(prospect.googleid);
     console.log("deleting");
     post("/api/deletegroup", { group_code: props.group_code });
   };
-  // const [answers, setAnswers] = useState([]);
-  // useEffect(() => {
-  //   get("/api/get-answers", { group_code: props.group_code, googleid: props.googleid }).then(
-  //     answerObjs
-  //   );
-  // });
+
   const [prospect, setProspect] = useState(null);
   console.log(prospect);
   console.log(useLocation());
@@ -53,6 +56,13 @@ function ProspectsPage(props) {
         </div>
         <div className="IndividualPage-container">
           <div className="IndividualPage-header">ABOUT</div>
+          <div className="ProspectsPage-answer"> 
+            {answers.map((answerObjs) => (
+              <div className="ProspectsPage-question">{answerObjs.question}
+                <div className="ProspectsPage-answer">{answerObjs.answer}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </span>
     </>
