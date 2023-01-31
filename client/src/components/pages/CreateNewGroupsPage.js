@@ -81,13 +81,6 @@ function CreateNewGroupsPage(props) {
     };
   };
 
-  // description: req.body.description,
-  //   img_url: req.body.img_url,
-  //   prospects: 0,
-  //   user_id: [],
-  //   questions: req.body.questions,
-  //   group_code: req.body.creator_id
-
   function addComponent() {
     if (componentNames.length > 0) {
       setComponents([...components, componentNames[0]]);
