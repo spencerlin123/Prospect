@@ -50,6 +50,7 @@
   flex-direction: column;
   text-align: center;
   justify-items: space-between;
+  position: fixed;
 }
 
 .IndividualPage-header {
@@ -62,7 +63,7 @@
   font-size: 30px;
   font-family: "Lato";
   font-weight: 1000;
-  margin-bottom: -75px;
+  margin-bottom: -90px;
 }
 
 .Prospects-wholepage {
@@ -219,4 +220,37 @@
   color: rgb(129, 1, 1);
   border-color: rgb(129, 1, 1);
   cursor: pointer;
+}
+
+.ProspectsPage-answer {
+  padding-left: 56px;
+  font-family: "Lato";
+}
+
+.ProspectsPage-question {
+  font-weight: 1000;
+  color: #000957;
+  font-size: 20px;
+  margin-top: 24px;
+  font-family: "Lato";
+}
+
+.ProspectsPage-answer {
+  color: rgb(65, 65, 65);
+  font-weight: 700;
+  margin-top: 8px;
+  font-family: "Lato";
+  font-size: 17px;
+}
+
+.about-empty-space {
+  height: 100%;
+  width: 53%;
+  background-color: white;
+}
+
+.questions-empty-space {
+  width: 100%;
+  height: 100px;
+  background-color: white;
 }

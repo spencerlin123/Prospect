@@ -17,6 +17,7 @@
   border: solid;
   border-color: white;
   border-width: 0px;
+  cursor: pointer;
 }
 
 .Profile-pic {

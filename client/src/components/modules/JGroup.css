@@ -7,6 +7,20 @@
   text-decoration: none;
 }
 
-.JGroup-container:hover {
-  background: white;
+.JGroup-leave {
+  background: transparent;
+  height: 25px;
+  width: auto;
+  background-size: cover;
+  border: transparent;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.JGroup-container:hover .JGroup-leave {
+  background-image: url("./Screenshot_20230130_095141.png");
+}
+
+.JGroup-leave:hover {
+  cursor: pointer;
 }

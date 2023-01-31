@@ -61,6 +61,7 @@ function GroupQuestionsPage(props) {
               </div>
             ))}
           </div>
+          <div className="GroupQuestions-bottom-emptyspace" />
         </div>
       </div>
       <div className="Questions-line">

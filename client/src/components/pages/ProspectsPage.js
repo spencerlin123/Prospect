@@ -56,15 +56,18 @@ function ProspectsPage(props) {
             BACK
           </button>
         </div>
+        <div className="about-empty-space" />
         <div className="IndividualPage-container">
           <div className="IndividualPage-header">ABOUT</div>
-          <div className="ProspectsPage-answer"> 
+          <div className="ProspectsPage-answer">
             {answers.map((answerObjs) => (
-              <div className="ProspectsPage-question">{answerObjs.question}
+              <div className="ProspectsPage-question">
+                - {answerObjs.question}
                 <div className="ProspectsPage-answer">{answerObjs.answer}</div>
               </div>
             ))}
           </div>
+          <div className="questions-empty-space" />
         </div>
       </span>
     </>
