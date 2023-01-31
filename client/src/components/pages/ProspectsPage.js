@@ -45,7 +45,7 @@ function ProspectsPage(props) {
           <img src={prospect.img_url} className="about-circleimage" />
           <div className="about-name">{prospect.name}</div>
           <button className="delete-button" onClick={handleSubmit1}>
-            DELETE
+            DELETE PROSPECT
           </button>
           <button className="Back-Button" onClick={() => location.reload()}>
             BACK
@@ -72,7 +72,7 @@ function ProspectsPage(props) {
               <div className="Prospects-line">
                 <div className="button-fix">
                   <button className="group-delete" onClick={handleSubmit2}>
-                    DELETE
+                    DELETE GROUP
                   </button>
                   <div className="group-code-share">GROUP CODE: {props.group_code}</div>
                 </div>

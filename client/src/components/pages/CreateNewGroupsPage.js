@@ -60,7 +60,7 @@ function CreateNewGroupsPage(props) {
         title: desc1,
         description: desc2,
         questions: questions,
-        img_url: selectedFile,
+        img_url: img,
         group_code: Math.floor(100000 + Math.random() * 900000),
       }).then((res) => {
         console.log(res);
