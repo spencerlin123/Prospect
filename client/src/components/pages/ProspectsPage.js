@@ -29,7 +29,7 @@ function ProspectsPage(props) {
 
   const handleSubmit2 = (event) => {
     event.preventDefault();
-    post("/api/deletegroup", { group_code: props.group_code });
+    post("/api/deletegroup", { googleid: prospect.googleid, group_code: props.group_code });
     navigate("/created-groups");
   };
 
