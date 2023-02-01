@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;900;1000&display=swap");
 
 .navbar {
   background: #000957;
@@ -12,6 +12,7 @@
   z-index: 1000;
   text-decoration: none;
   justify-content: space-between;
+  font-family: "Lato"
 }
 
 .fixed {
@@ -253,13 +254,13 @@
   margin-right: 32px;
   padding-left: 20px;
   padding-right: 20px;
-  font-family: "Lato";
-  font-weight: 1000;
+  font-weight: 900;
   border: solid;
   border-color: white;
   background-color: transparent;
   color: white;
   font-size: 1.4rem;
+  font-family: "Lato";
 }
 
 .logout-button:hover {
@@ -269,7 +270,7 @@
   padding-left: 20px;
   padding-right: 20px;
   font-family: "Lato";
-  font-weight: 1000;
+  font-weight: 900;
   border: solid;
   border-color: white;
   background-color: white;
@@ -281,4 +282,8 @@
 .login-button {
   margin: 16px;
   margin-right: 32px;
+}
+
+.navbar-item {
+  font-family: "Lato";
 }

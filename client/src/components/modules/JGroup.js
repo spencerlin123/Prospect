@@ -8,7 +8,6 @@ import { get, post } from "../../utilities";
 export const Group = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(prospect.googleid);
     post("/api/leavegroup", { group_code: props.group_code });
     location.reload();
   };

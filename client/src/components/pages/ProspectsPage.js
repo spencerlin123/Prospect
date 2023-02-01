@@ -13,8 +13,6 @@ function ProspectsPage(props) {
 
   useEffect(() => {
     get("/api/users", { group_code: props.group_code }).then((responseObj) => {
-      console.log(responseObj);
-      console.log(responseObj.succeeded);
       if (responseObj.succeeded) {
         setUsers(responseObj.users);
       } else {
@@ -25,30 +23,23 @@ function ProspectsPage(props) {
 
   useEffect(() => {
     get("/api/get-answers", { group_code: props.group_code }).then((answerObjs) => {
-      console.log(answerObjs);
       setAnswers(answerObjs);
     });
   }, []);
 
   const handleSubmit1 = (event) => {
     event.preventDefault();
-    console.log(prospect.googleid);
     post("/api/deleteprospect", { googleid: prospect.googleid, group_code: props.group_code });
     location.reload();
   };
 
   const handleSubmit2 = (event) => {
     event.preventDefault();
-    console.log("deleting");
     post("/api/deletegroup", { group_code: props.group_code });
     navigate("/created-groups");
   };
 
   const [prospect, setProspect] = useState(null);
-  console.log(prospect);
-  console.log(useLocation());
-  console.log(props.group_code);
-
   return prospect ? (
     <>
       <span className="Prospects-wholepage">
