@@ -209,17 +209,15 @@ router.post("/answers", (req, res) => {
   }
 });
 
-// router.get("/tests", (req, res) => {
-// // create 3 group documents here
-//   const group1 = new Group({
-//     img_url: "https://pkimgcdn.peekyou.com/431f08b5929cc20395d7c2562721ba23.jpeg",
-//     title: "Ben",
-//     description: "This is a cute Ben",
-//     prospects: 1
+// router.get("/answers", (req, res) => {
+//   const answer = new Answer({
+//       googleid: "107999628877875536924",
+//       group_code: 772280,
+//       question: "How tall are you?",
+//       answer: "6 feet",
 //   });
-
-//   group1.save().then((group1) => {
-//     res.send(group1);
+//   answer.save().then((answer1) => {
+//     res.send(answer1);
 //   })
 // })
 
