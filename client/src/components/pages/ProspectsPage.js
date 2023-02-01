@@ -21,11 +21,11 @@ function ProspectsPage(props) {
     });
   }, []);
 
-  useEffect(() => {
-    get("/api/get-answers", { group_code: props.group_code }).then((answerObjs) => {
-      setAnswers(answerObjs);
-    });
-  }, []);
+  // useEffect(() => {
+  //   get("/api/get-answers", { group_code: props.group_code }).then((answerObjs) => {
+  //     setAnswers(answerObjs);
+  //   });
+  // }, []);
 
   const handleSubmit1 = (event) => {
     event.preventDefault();
@@ -39,9 +39,16 @@ function ProspectsPage(props) {
     navigate("/created-groups");
   };
 
+  const handleProspect = (event) => {
+    get("/api/get-answers", { group_code: props.group_code, googleid: prospect.googleid}).then((answerObjs) => {
+      setAnswers(answerObjs);
+    });
+  }
+
   const [prospect, setProspect] = useState(null);
   return prospect ? (
     <>
+      {handleProspect()}
       <span className="Prospects-wholepage">
         <div className="gray-container">
           <img src={prospect.img_url} className="about-circleimage" />

@@ -78,7 +78,7 @@ router.get("/users", (req, res) => {
 
 router.get("/get-answers", (req, res) => {
   if (req.user) {
-    Answer.find({ group_code: req.query.group_code, googleid: req.user.googleid }).then(
+    Answer.find({ group_code: req.query.group_code, googleid: req.query.googleid }).then(
       (document) => {
         res.send(document);
       }
@@ -150,7 +150,7 @@ router.post("/deleteprospect", async (req, res) => {
     user.joined_groups = temp1.concat(temp2);
     user.save();
   });
-  Answer.deleteMany({ googleid: req.user.googleid, group_code: req.body.group_code }).then(
+  Answer.deleteMany({ googleid: req.body.googleid, group_code: req.body.group_code }).then(
     (ret) => {
     }
   );
