@@ -31,8 +31,6 @@ function GroupQuestionsPage(props) {
       questions: questions,
       answers: answers,
     }).then((res) => {
-      console.log("here");
-      console.log(res);
     });
     navigate("/joined-groups");
   };

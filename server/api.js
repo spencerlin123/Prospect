@@ -78,10 +78,8 @@ router.get("/users", (req, res) => {
 
 router.get("/get-answers", (req, res) => {
   if (req.user) {
-    console.log({ group_code: req.query.group_code, googleid: req.user.googleid });
     Answer.find({ group_code: req.query.group_code, googleid: req.user.googleid }).then(
       (document) => {
-        console.log(document);
         res.send(document);
       }
     );
@@ -114,13 +112,10 @@ router.post("/editGroup", async (req, res) => {
   if (!group.user_id.includes(req.user.googleid)) {
     group.user_id = [...group.user_id, req.user.googleid];
     group.prospects = group.user_id.length;
-    console.log(group);
 
     await group.save();
 
     User.findOne({ googleid: req.user.googleid }).then((user) => {
-      console.log("HELLO FOUND THING");
-      console.log(user);
       user.joined_groups = [...user.joined_groups, req.body.group_code];
       user.save();
       res.send({ success: true });
@@ -144,17 +139,21 @@ router.post("/deleteprospect", async (req, res) => {
     group.user_id = temp1.concat(temp2);
     group.prospects = group.user_id.length;
     group.save();
-
-    User.findOne({ googleid: req.body.googleid }).then((user) => {
-      const ind = user.joined_groups.findIndex((element) => {
-        return element == req.body.group_code;
-      });
-      const temp1 = user.joined_groups.slice(0, ind);
-      const temp2 = user.joined_groups.slice(ind + 1);
-      user.joined_groups = temp1.concat(temp2);
-      user.save();
-    });
   });
+
+  User.findOne({ googleid: req.body.googleid }).then((user) => {
+    const ind = user.joined_groups.findIndex((element) => {
+      return element == req.body.group_code;
+    });
+    const temp1 = user.joined_groups.slice(0, ind);
+    const temp2 = user.joined_groups.slice(ind + 1);
+    user.joined_groups = temp1.concat(temp2);
+    user.save();
+  });
+  Answer.deleteMany({ googleid: req.user.googleid, group_code: req.body.group_code }).then(
+    (ret) => {
+    }
+  );
 });
 
 router.post("/leavegroup", async (req, res) => {
@@ -165,26 +164,23 @@ router.post("/leavegroup", async (req, res) => {
     const temp1 = group.user_id.slice(0, ind);
     const temp2 = group.user_id.slice(ind + 1);
     group.user_id = temp1.concat(temp2);
-    console.log(group.user_id);
+    group.prospects = group.user_id.length;
     group.save();
-    console.log(group);
-    User.findOne({ googleid: req.user.googleid }).then((user) => {
-      const ind = user.joined_groups.findIndex((element) => {
-        return element == req.body.group_code;
-      });
-      const temp1 = user.joined_groups.slice(0, ind);
-      const temp2 = user.joined_groups.slice(ind + 1);
-      user.joined_groups = temp1.concat(temp2);
-      user.save();
-    });
   });
+  User.findOne({ googleid: req.user.googleid }).then((user) => {
+    const ind = user.joined_groups.findIndex((element) => {
+      return element == req.body.group_code;
+    });
+    const temp1 = user.joined_groups.slice(0, ind);
+    const temp2 = user.joined_groups.slice(ind + 1);
+    user.joined_groups = temp1.concat(temp2);
+    user.save();
+  });
+  Answer.deleteMany({ googleid: req.user.googleid, group_code: req.body.group_code });
 });
 
 router.post("/deletegroup", async (req, res) => {
-  console.log("delete group");
   Group.deleteOne({ group_code: req.body.group_code }).then((e) => {
-    console.log(e);
-    console.log("finished deleting");
   });
 });
 
@@ -201,8 +197,6 @@ router.get("/group-questions", (req, res) => {
 });
 
 router.post("/answers", (req, res) => {
-  console.log(req.body.questions.length);
-  console.log(req.body.answers.length);
   for (let i = 0; i < req.body.questions.length; i++) {
     const newAnswer = new Answer({
       googleid: req.user.googleid,
@@ -210,7 +204,6 @@ router.post("/answers", (req, res) => {
       question: req.body.questions[i],
       answer: req.body.answers[i],
     });
-    console.log(newAnswer);
     newAnswer.save();
     // newAnswer.save().then((answer) => res.send(answer));
   }

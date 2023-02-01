@@ -20,16 +20,17 @@ function CreatedGroupsPage(props) {
           <div>
             <b className="CreatedGroups-header">CREATED GROUPS</b>
             {groups.map((group_info) => (
-              <div>
-                <Group
-                  img_url={group_info.img_url}
-                  title={group_info.title}
-                  description={group_info.description}
-                  prospects={group_info.prospects}
-                  group_code = {group_info.group_code}
-                />
-              </div>
-            ))}
+                <div>
+                  <Group
+                    img_url={group_info.img_url}
+                    title={group_info.title}
+                    description={group_info.description}
+                    prospects={group_info.user_id.length}
+                    group_code={group_info.group_code}
+                  />
+                </div>
+              ))
+            }
             <div className="Cemptyspace" />
             <div className="CreatedGroups-line">
               <Link to="/createnewgroup">

@@ -39,7 +39,6 @@ function CreateNewGroupsPage(props) {
   };
 
   useEffect(() => {
-    console.log(questions);
   }, [questions]);
 
   // const actualBtn = document.getElementById('actual-btn');
@@ -63,7 +62,6 @@ function CreateNewGroupsPage(props) {
         img_url: img,
         group_code: Math.floor(100000 + Math.random() * 900000),
       }).then((res) => {
-        console.log(res);
         navigate("/created-groups");
       });
     } else {
