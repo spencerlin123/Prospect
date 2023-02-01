@@ -77,13 +77,12 @@ router.get("/users", (req, res) => {
 });
 
 router.get("/get-answers", (req, res) => {
-  if (req.user) {
-    Answer.find({ group_code: req.query.group_code, googleid: req.user.googleid }).then(
-      (document) => {
-        res.send(document);
-      }
-    );
-  }
+  console.log(req.user);
+  Answer.find({ group_code: req.query.group_code, googleid: req.query.googleid }).then(
+    (document) => {
+      res.send(document);
+    }
+  );
 });
 
 router.post("/groups", (req, res) => {
@@ -151,8 +150,7 @@ router.post("/deleteprospect", async (req, res) => {
     user.save();
   });
   Answer.deleteMany({ googleid: req.user.googleid, group_code: req.body.group_code }).then(
-    (ret) => {
-    }
+    (ret) => {}
   );
 });
 
@@ -180,8 +178,7 @@ router.post("/leavegroup", async (req, res) => {
 });
 
 router.post("/deletegroup", async (req, res) => {
-  Group.deleteOne({ group_code: req.body.group_code }).then((e) => {
-  });
+  Group.deleteOne({ group_code: req.body.group_code }).then((e) => {});
 });
 
 router.get("/test", (req, res) => {

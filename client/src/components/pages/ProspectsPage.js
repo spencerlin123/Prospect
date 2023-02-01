@@ -22,9 +22,11 @@ function ProspectsPage(props) {
   }, []);
 
   useEffect(() => {
-    get("/api/get-answers", { group_code: props.group_code }).then((answerObjs) => {
-      setAnswers(answerObjs);
-    });
+    get("/api/get-answers", { group_code: props.group_code, googleid: prospect.googleid }).then(
+      (answerObjs) => {
+        setAnswers(answerObjs);
+      }
+    );
   }, []);
 
   const handleSubmit1 = (event) => {
