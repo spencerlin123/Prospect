@@ -21,12 +21,6 @@ function ProspectsPage(props) {
     });
   }, []);
 
-  // useEffect(() => {
-  //   get("/api/get-answers", { group_code: props.group_code }).then((answerObjs) => {
-  //     setAnswers(answerObjs);
-  //   });
-  // }, []);
-
   const handleSubmit1 = (event) => {
     event.preventDefault();
     post("/api/deleteprospect", { googleid: prospect.googleid, group_code: props.group_code });

@@ -180,8 +180,7 @@ router.post("/leavegroup", async (req, res) => {
 });
 
 router.post("/deletegroup", async (req, res) => {
-  Group.deleteOne({ group_code: req.body.group_code }).then((e) => {
-  });
+  Group.deleteOne({ group_code: req.body.group_code }).then((e) => {});
 });
 
 router.get("/test", (req, res) => {
