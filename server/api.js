@@ -176,7 +176,7 @@ router.post("/leavegroup", async (req, res) => {
     user.joined_groups = temp1.concat(temp2);
     user.save();
   });
-  Answer.deleteMany({ googleid: req.user.googleid, group_code: req.body.group_code });
+  Answer.deleteMany({ googleid: req.body.googleid, group_code: req.body.group_code });
 });
 
 router.post("/deletegroup", async (req, res) => {
