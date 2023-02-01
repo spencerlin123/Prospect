@@ -123,10 +123,6 @@ router.post("/editGroup", async (req, res) => {
   } else {
     res.status(400).send({ error: "You have already joined this group!" });
   }
-
-  // if ((group.user_id).includes(req.user.googleid)) {
-  //   res.status(400).send('You have already joined this group!')
-  // }
 });
 
 router.post("/deleteprospect", async (req, res) => {
@@ -204,7 +200,6 @@ router.post("/answers", (req, res) => {
       answer: req.body.answers[i],
     });
     newAnswer.save();
-    // newAnswer.save().then((answer) => res.send(answer));
   }
 });
 
