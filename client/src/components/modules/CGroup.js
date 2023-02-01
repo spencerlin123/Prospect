@@ -5,7 +5,6 @@ import { GroupDesc } from "./GroupDesc";
 import { GroupPic } from "./GroupPic";
 
 export const Group = (props) => {
-  console.log("group_code ", props.group_code)
   return (
     <Link to={"/created-groups/" + props.group_code} className="Group-container">
       <GroupPic img_url={props.img_url} />
