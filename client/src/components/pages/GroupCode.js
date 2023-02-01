@@ -7,11 +7,10 @@ function GroupCode(props) {
   const [code, setCode] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    post("/api/editGroup", { group_code: code }).then((res) => 
-      console.log(res)).catch((res) => alert("You've already joined this group!"));
-    navigate("/group-questions/" + code);
-    };
-
+    post("/api/editGroup", { group_code: code })
+      .then((res) => navigate("/group-questions/" + code))
+      .catch((res) => alert("You've already joined this group!"));
+  };
 
   return (
     <div className="GroupCode-page">

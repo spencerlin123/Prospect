@@ -47,31 +47,46 @@ router.post("/initsocket", (req, res) => {
 // |------------------------------|
 
 router.get("/createdgroups", (req, res) => {
-  Group.find({ creator_id: req.user.googleid }).then((groups) => {
-    res.send(groups);
-  });
+  if (req.user) {
+    Group.find({ creator_id: req.user.googleid }).then((groups) => {
+      res.send(groups);
+    });
+  }
 });
 
 router.get("/joinedgroups", (req, res) => {
   Group.find({ user_id: req.user.googleid }).then((groups) => {
     res.send(groups);
-
   });
 });
 
 router.get("/users", (req, res) => {
   User.find({ joined_groups: req.query.group_code }).then((users) => {
-    res.send(users);
+    Group.findOne({ group_code: req.query.group_code }).then((group) => {
+      let responseObj = { users: null, succeeded: false };
+      if (group) {
+        if (req.user) {
+          if (group.creator_id == req.user.googleid) {
+            responseObj = { users: users, succeeded: true };
+          }
+        }
+      }
+      res.send(responseObj);
+    });
   });
 });
 
 router.get("/get-answers", (req, res) => {
-  console.log( {group_code: req.query.group_code, googleid: req.user.googleid });
-  Answer.find({ group_code: req.query.group_code, googleid: req.user.googleid }).then((document) => {
-    console.log(document);
-    res.send(document);
-  })
-})
+  if (req.user) {
+    console.log({ group_code: req.query.group_code, googleid: req.user.googleid });
+    Answer.find({ group_code: req.query.group_code, googleid: req.user.googleid }).then(
+      (document) => {
+        console.log(document);
+        res.send(document);
+      }
+    );
+  }
+});
 
 router.post("/groups", (req, res) => {
   if (req.user) {
@@ -120,7 +135,6 @@ router.post("/editGroup", async (req, res) => {
 });
 
 router.post("/deleteprospect", async (req, res) => {
-
   Group.findOne({ group_code: req.body.group_code }).then((group) => {
     const ind = group.user_id.findIndex((element) => {
       return element == req.body.googleid;
@@ -151,18 +165,18 @@ router.post("/leavegroup", async (req, res) => {
     const temp1 = group.user_id.slice(0, ind);
     const temp2 = group.user_id.slice(ind + 1);
     group.user_id = temp1.concat(temp2);
-    console.log(group.user_id)
+    console.log(group.user_id);
     group.save();
-  console.log(group)
-  User.findOne({ googleid: req.user.googleid }).then((user) => {
-    const ind = user.joined_groups.findIndex((element) => {
-      return element == req.body.group_code;
+    console.log(group);
+    User.findOne({ googleid: req.user.googleid }).then((user) => {
+      const ind = user.joined_groups.findIndex((element) => {
+        return element == req.body.group_code;
+      });
+      const temp1 = user.joined_groups.slice(0, ind);
+      const temp2 = user.joined_groups.slice(ind + 1);
+      user.joined_groups = temp1.concat(temp2);
+      user.save();
     });
-    const temp1 = user.joined_groups.slice(0, ind);
-    const temp2 = user.joined_groups.slice(ind + 1);
-    user.joined_groups = temp1.concat(temp2);
-    user.save();
-  });
   });
 });
 

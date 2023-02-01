@@ -9,11 +9,17 @@ import { useLocation } from "@reach/router";
 function ProspectsPage(props) {
   const [users, setUsers] = useState([]);
   const [answers, setAnswers] = useState([]);
+  const [access_message, setAccess_message] = useState(null);
 
   useEffect(() => {
-    get("/api/users", { group_code: props.group_code }).then((userObjs) => {
-      console.log(userObjs);
-      setUsers(userObjs);
+    get("/api/users", { group_code: props.group_code }).then((responseObj) => {
+      console.log(responseObj);
+      console.log(responseObj.succeeded);
+      if (responseObj.succeeded) {
+        setUsers(responseObj.users);
+      } else {
+        setAccess_message("Authorization Failed");
+      }
     });
   }, []);
 
@@ -56,6 +62,7 @@ function ProspectsPage(props) {
             BACK
           </button>
         </div>
+        <div className="error-message">{access_message}</div>
         <div className="about-empty-space" />
         <div className="IndividualPage-container">
           <div className="IndividualPage-header">ABOUT</div>
@@ -83,6 +90,7 @@ function ProspectsPage(props) {
                   <Profile img_url={user_info.img_url} name={user_info.name} title={props.title} />
                 </div>
               ))}
+              <div className="error-message">{access_message}</div>
               <div className="Pemptyspace" />
               <div className="Prospects-line">
                 <div className="button-fix">
@@ -97,6 +105,7 @@ function ProspectsPage(props) {
         ) : (
           <div>
             <b className="ProspectsPage-login">Please log in</b>
+            <div className="error-message">{access_message}</div>
           </div>
         )}
       </div>
